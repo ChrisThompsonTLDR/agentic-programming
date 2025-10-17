@@ -1,0 +1,70 @@
+{
+    "mcpServers": {
+        "christhompsontldr": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-github"
+            ],
+            "env": {
+                "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN_HERE",
+                "GITHUB_TOOLSETS": "all"
+            }
+        },
+        "Context7": {
+            "url": "https://mcp.context7.com/mcp",
+            "headers": []
+        },
+        "sequential-thinking": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ]
+        },
+        "laravel-boost": {
+            "command": "php",
+            "args": [
+                "artisan",
+                "boost:mcp"
+            ]
+        },
+        "task-master-ai": {
+            "command": "npx -y task-master-ai",
+            "env": {
+                "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY_HERE",
+                "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE",
+                "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY_HERE",
+                "GOOGLE_API_KEY": "YOUR_GOOGLE_KEY_HERE",
+                "MISTRAL_API_KEY": "YOUR_MISTRAL_KEY_HERE",
+                "GROQ_API_KEY": "YOUR_GROQ_KEY_HERE",
+                "OPENROUTER_API_KEY": "YOUR_OPENROUTER_KEY_HERE",
+                "XAI_API_KEY": "YOUR_XAI_KEY_HERE",
+                "AZURE_OPENAI_API_KEY": "YOUR_AZURE_KEY_HERE",
+                "OLLAMA_API_KEY": "YOUR_OLLAMA_API_KEY_HERE"
+            }
+        },
+        "newknowledge": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-knowledge-graph",
+                "--memory-path",
+                "/var/www/html/.aim/"
+            ]
+        },
+        "deepwiki": {
+            "url": "https://mcp.deepwiki.com/mcp"
+        },
+        "perplexity": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "perplexity-mcp"
+            ],
+            "env": {
+                "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY_HERE"
+            }
+        }
+    }
+}
