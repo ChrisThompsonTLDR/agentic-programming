@@ -114,7 +114,7 @@ _"The PRD is ready. We can now formalize this into an epic with `create epic for
 4. Do not recommend packages that don't exist in `@packages/` unless absolutely necessary and well-justified.
 5. Do not save the PRD without comprehensive research backing and user confirmation.
 6. Do not create multiple PRDs at once — only the one specified or derived from the selected idea.
-7. Do not include timelines, milestones or time estimates
+7. **Do not include timelines, milestones or time estimates** — this is agentic programming where time estimates are pointless and quality/completeness are the only metrics that matter
 8. Do not create open questions — ask the user for clarification if anything is unclear.
 9. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
 10. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.

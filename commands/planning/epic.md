@@ -90,6 +90,7 @@ _"Epic created in the `epics` tag. To expand this into a detailed engineering pl
 5. Do not create more than one epic per PRD.
 6. Do not modify the PRD — it remains the requirements source of truth.
 7. Do not skip the idea file check — it contains critical context.
-8. Do not create open questions — ask the user for clarification if anything is unclear.
-9. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
-10. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.
+8. **Do not include time estimates, timelines, or duration predictions** — this is agentic programming where time estimates are pointless and quality/completeness are the only metrics that matter.
+9. Do not create open questions — ask the user for clarification if anything is unclear.
+10. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
+11. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.

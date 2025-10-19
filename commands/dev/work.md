@@ -61,5 +61,6 @@ Your responsibility is to **implement entire tasks as cohesive units** using enh
 5. Do not ignore implementation patterns — apply research findings and Laravel conventions discovered during planning.
 6. Do not silently resolve ambiguities — flag them as **Open Questions** for the TPM/Lead Engineer.
 7. Do not work individual subtasks — implement complete tasks as cohesive units using enhanced preparation.
-8. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
-9. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.
+8. **Do not include time estimates, timelines, or duration predictions** — this is agentic programming where time estimates are pointless and quality/completeness are the only metrics that matter.
+9. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
+10. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.

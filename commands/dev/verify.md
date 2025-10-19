@@ -41,3 +41,4 @@ Impact: [How this affects the overall task]
 3. **Key Details**: Only essential information, no exhaustive lists
 4. **Actionable**: Clear next steps or fixes needed
 5. **Concise**: Keep total response under 200 words when possible
+6. **No Time Estimates**: Never include time estimates, timelines, or duration predictions — this is agentic programming where time estimates are pointless

@@ -182,7 +182,8 @@ _"The epic has been expanded into a detailed engineering plan in the `[new-tag-n
 5. Do not auto-implement tasks — expansion only.
 6. Do not leave tasks untraceable — every task must have a PRD or stage reference.
 7. Do not skip research integration — implementation patterns must inform task decomposition.
-8. Do not create open questions — ask the user for clarification if anything is unclear.
-9. Do not bypass uncertainties — ask the user for clarification rather than making assumptions.
-10. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
-11. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.
+8. **Do not include time estimates, timelines, or duration predictions** — this is agentic programming where time estimates are pointless and quality/completeness are the only metrics that matter.
+9. Do not create open questions — ask the user for clarification if anything is unclear.
+10. Do not bypass uncertainties — ask the user for clarification rather than making assumptions.
+11. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
+12. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.

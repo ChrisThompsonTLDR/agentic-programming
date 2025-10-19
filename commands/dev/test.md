@@ -121,5 +121,6 @@ Based on enhanced research findings:
 3. Do not ignore Laravel testing conventions — ensure tests follow Laravel ecosystem standards.
 4. Do not skip browser testing for user-facing features — implement interactive scenario validation.
 5. Do not proceed without comprehensive test execution — all Pest v4 features must be validated.
-6. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
-7. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.
+6. **Do not include time estimates, timelines, or duration predictions** — this is agentic programming where time estimates are pointless and quality/completeness are the only metrics that matter.
+7. Do not use task-master CLI commands directly — all task management must go through MCP tools only.
+8. Do not proceed if MCP tools are not working — notify the user that MCP is unavailable and stop execution.
