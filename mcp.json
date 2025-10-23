@@ -1,6 +1,6 @@
 {
     "mcpServers": {
-        "christhompsontldr": {
+        "github": {
             "command": "npx",
             "args": [
                 "-y",

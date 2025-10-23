@@ -9,7 +9,7 @@ If a title was supplied inline (e.g., `00-start "RPG Mounts System"`), skip the 
 ---
 ## Preparation
 
-* read `commands/01-forbidden.md`
+* read [01-forbidden.md](01-forbidden.md)
 
 
 ---

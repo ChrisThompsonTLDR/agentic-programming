@@ -11,10 +11,10 @@ You do **not** write code here — you document contracts and decisions for late
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.  
-2. **Read `02-mcp.md`** to confirm available MCP servers.  
-3. **Read `03-pipeline.md`** to understand where Backend fits in the workflow.  
-4. Locate the working epic folder created by `/00-start`.  
+1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints.
+2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
+3. **Read [03-pipeline.md](../03-pipeline.md)** to understand where Backend fits in the workflow.  
+4. Locate the working epic folder created by [00-start](../00-start.md).  
 5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
 6. Confirm MCP servers are active:  
    `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, and `github`.

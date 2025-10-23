@@ -10,10 +10,10 @@ You do **not** create a new task — you **edit the existing epic** to finalize 
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.  
-2. **Read `02-mcp.md`** to confirm available MCP servers.  
-3. **Read `03-pipeline.md`** to verify workflow context.  
-4. Locate the working epic folder created by `/00-start`.  
+1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints.
+2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
+3. **Read [03-pipeline.md](../03-pipeline.md)** to verify workflow context.  
+4. Locate the working epic folder created by [00-start](../00-start.md).  
 5. **Reference all prior artifacts explicitly:**
    - `<epic>/01-discuss.md`
    - `<epic>/02-idea.md`
@@ -29,7 +29,7 @@ You do **not** create a new task — you **edit the existing epic** to finalize 
 ## Steps
 
 1. **Validate Inputs**
-   - Confirm that the epic task already exists (created by `/00-start`).  
+   - Confirm that the epic task already exists (created by [00-start](../00-start.md)).  
    - Extract its `epic_id` and path:  
      `.task-master/epics/<epic_id>_<slug>/`.  
    - Verify all referenced artifacts in *Preparation step 5* exist.  

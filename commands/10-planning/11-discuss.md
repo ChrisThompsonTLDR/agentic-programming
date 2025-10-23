@@ -8,13 +8,13 @@ You use factual reasoning, existing documentation, and research MCPs to ensure e
 ---
 ## Preparation
 
-1. **Read `01-forbidden.md`** and enforce all constraints before continuing.
-2. Read `02-mcp.md` to inform yourself of tools.
-3. Read `03-pipeline.md` to understand the agentic pipeline.
+1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints before continuing.
+2. Read [02-mcp.md](../02-mcp.md) to inform yourself of tools.
+3. Read [03-pipeline.md](../03-pipeline.md) to understand the agentic pipeline.
 4. **Determine working epic:**
    - If invoked with no additional input, prompt the user: `"Which epic are we discussing?"`
    - If a title was provided inline (e.g., `/11-discuss "RPG Mounts System"`), skip the prompt and locate the epic in Task Master.
-   - If `/00-start` was called in this chat, use its `epic_id`.
+   - If [00-start](../00-start.md) was called in this chat, use its `epic_id`.
 5. **Set session context:**
    - Tag all new tasks with the epic’s tag (e.g., `epic-005-rpg-mounts`).  
 6. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.

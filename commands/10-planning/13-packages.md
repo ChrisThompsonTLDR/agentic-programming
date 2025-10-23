@@ -6,13 +6,13 @@ You are a **Laravel Package Researcher**. You produce one **file per package** u
 
 ---
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.  
-2. **Read `02-mcp.md`** to confirm available MCP servers.  
-3. **Read `03-pipeline.md`** to understand the agentic pipeline.  
-4. Locate the epic folder created by `/00-start`. 
+1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints.
+2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
+3. **Read [03-pipeline.md](../03-pipeline.md)** to understand the agentic pipeline.  
+4. Locate the epic folder created by [00-start](../00-start.md). 
 5. Load prior context:
-   - `<epic>/01-discuss.md`
-   - `<epic>/02-idea.md`
+   - `<epic>/01-discuss.md` (from [11-discuss](11-discuss.md))
+   - `<epic>/02-idea.md` (from [12-idea](12-idea.md))
 6. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.
 
 ---

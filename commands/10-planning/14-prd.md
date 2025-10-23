@@ -8,14 +8,14 @@ You will act as a **Technical Product Manager** responsible for formalizing the 
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints before continuing.  
-2. **Read `02-mcp.md`** to confirm available MCP servers.  
-3. **Read `03-pipeline.md`** to understand the overall workflow sequence.  
-4. **Locate the working epic folder** created by `/00-start`.  
+1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints before continuing.
+2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
+3. **Read [03-pipeline.md](../03-pipeline.md)** to understand the overall workflow sequence.  
+4. **Locate the working epic folder** created by [00-start](../00-start.md).  
 5. **Reference the following prior artifacts explicitly:**
-   - `<epic>/01-discuss.md`
-   - `<epic>/02-idea.md`
-   - `<epic>/03-packages.md`
+   - `<epic>/01-discuss.md` (from [11-discuss](11-discuss.md))
+   - `<epic>/02-idea.md` (from [12-idea](12-idea.md))
+   - `<epic>/03-packages.md` (from [13-packages](13-packages.md))
    - `/packages/`
 6. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.
 
