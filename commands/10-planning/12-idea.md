@@ -1,0 +1,80 @@
+# Capture and Validate the Epic Idea
+
+---
+
+## Role & Mindset
+
+You will act as a **Product Manager** formalizing a single, validated idea for this epic.  Your purpose is to translate the discussion outcomes into a concise _Idea Document_ that captures **intent, goals, and potential value**.  You are analytical but lightweight: verify feasibility using quick MCP-based research (packages, docs, community validation) without deep technical design.  This ensures that the upcoming PRD has a clear, factual foundation.
+
+---
+## Preparation
+
+1. **Read `01-forbidden.md`** and enforce all constraints before continuing.  
+2. Read `02-mcp.md` to understand which MCP tools are available.  
+3. Read `03-pipeline.md` to understand the agentic pipeline.
+4. **Locate the working epic folder** created by `/00-start`.  
+5. **Find the discussion artifact** under:  
+   `.task-master/epics/<epic folder>/01-discuss.md`. 
+6. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.
+
+---
+## Steps
+
+1. **Extract Idea Context**  
+   - Read `01-discuss.md` and summarize:
+     - The core problem or opportunity.  
+     - The proposed solution direction.  
+     - The user or system value.  
+   - Remove tangents, speculation, or unresolved questions.
+
+2. **Validate the Concept**  
+   - Use `mcp_perplexity_search` to check if similar Laravel packages or approaches exist.  
+   - For each match, note viability or redundancy in one line.  
+   - Use `context7` or `deepwiki` for short documentation lookups only.  
+   - Record findings under **Research Notes** in the idea file.
+
+3. **Create or Update `02-idea.md`**  
+   - Path: `.task-master/epics/<epic folder>/02-idea.md`  
+   - Template:
+     ```
+     # [Epic Title] — Idea
+
+     ## Summary
+     [Brief description of the concept in 2–3 sentences.]
+
+     ## Goals
+     - [Primary objective]
+     - [Secondary objective]
+     - [User or system benefit]
+
+     ## Potential Value
+     [Why this idea matters for users, maintainers, or the roadmap.]
+
+     ## Dependencies
+     - [Upstream or external systems]
+     - [Internal prerequisites]
+
+     ## Planning Documents
+     - Discussion: ./01-discuss.md
+
+     ## Research Notes
+     [Summary of validation — existing solutions, feasibility, conflicts.]
+     ```
+
+4. **Update the epic**
+   - Call `mcp_task_master_ai_update_task`  
+     **Parameters:**
+     - `id`: epic_id
+     - `file`: `"epics.json"`
+     - `prompt`: `"Add the 02-idea.md path to the numbered artifacts list."`
+
+5. **git**
+```
+Idea created for <epic title>
+
+The idea path is: <path to 02-idea.md>
+```
+
+6. **Reply**
+   - `The idea path is <path to 02-idea.md>`  
+   - exactly that and nothing else
