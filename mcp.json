@@ -44,13 +44,13 @@
                 "OLLAMA_API_KEY": "YOUR_OLLAMA_API_KEY_HERE"
             }
         },
-        "newknowledge": {
+        "knowledgegraph": {
             "command": "npx",
             "args": [
                 "-y",
                 "mcp-knowledge-graph",
                 "--memory-path",
-                "/var/www/html/.aim/"
+                "./.aim/"
             ]
         },
         "deepwiki": {

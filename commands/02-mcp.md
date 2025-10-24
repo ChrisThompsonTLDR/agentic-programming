@@ -4,11 +4,11 @@ Ensure MCP servers are active
 3. `perplexity`
 4. `deepwiki`
 5. `laravel-boost`
-6. `newknowledge`
+6. `knowledgegraph`
 7. `sequentialthinking`
 
 ## Uses
-   - search `newknowledge` for related memories
+   - search `knowledgegraph` for related memories
    - read `context7` to read documentation
    - ask `deepwiki` questions about repos
    - search the web with `perplexity` and do deep research and reasoning

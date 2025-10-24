@@ -91,7 +91,7 @@ Multi-provider AI orchestration supporting:
 - Step-by-step problem solving
 - Logic validation and refinement
 
-### 🗂️ **New Knowledge** (`newknowledge`)
+### 🗂️ **New Knowledge** (`knowledgegraph`)
 - Knowledge graph management
 - Memory and context retention
 - Related information discovery

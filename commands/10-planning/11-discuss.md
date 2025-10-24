@@ -17,7 +17,7 @@ You use factual reasoning, existing documentation, and research MCPs to ensure e
    - If [00-start](../00-start.md) was called in this chat, use its `epic_id`.
 5. **Set session context:**
    - Tag all new tasks with the epic’s tag (e.g., `epic-005-rpg-mounts`).  
-6. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.
+6. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
 
 ---
 ## Steps

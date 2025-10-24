@@ -15,7 +15,7 @@ You do **not** write acceptance tests or implementation steps — you frame valu
 3. **Read `03-pipeline.md`** to confirm workflow order.  
 4. Locate the working epic folder created by `/00-start`.  
 5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
-6. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.
+6. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
 
 ---
 

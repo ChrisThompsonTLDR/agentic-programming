@@ -17,7 +17,7 @@ You will act as a **Technical Product Manager** responsible for formalizing the 
    - `<epic>/02-idea.md` (from [12-idea](12-idea.md))
    - `<epic>/03-packages.md` (from [13-packages](13-packages.md))
    - `/packages/`
-6. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.
+6. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
 
 ---
 

@@ -13,7 +13,7 @@ You are a **Laravel Package Researcher**. You produce one **file per package** u
 5. Load prior context:
    - `<epic>/01-discuss.md` (from [11-discuss](11-discuss.md))
    - `<epic>/02-idea.md` (from [12-idea](12-idea.md))
-6. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `newknowledge` and `sequentialthinking`.
+6. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
 
 ---
 ## Steps
