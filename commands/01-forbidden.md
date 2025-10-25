@@ -41,6 +41,7 @@ Every command must **read this file at startup** and enforce all constraints bef
 - ✅ All orchestration must go through **MCP tools**.  
 - ❌ Do not call Task-Master or system CLIs directly from markdown templates.  
 - ❌ Do not proceed if required MCP servers are unavailable — stop and report the failure.
+- ❌ Do not edit the task-master `tasks.json` or any other task file directly.  Only use MCP.
 
 ### 6. Knowledge and Documentation
 - ✅ All subtasks must include PRD line references and applicable gates (testing, quality, perf, security).  
