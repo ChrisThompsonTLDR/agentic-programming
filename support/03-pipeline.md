@@ -1,0 +1,34 @@
+## Pipeline
+```
+00-start.md
+01-forbidden.md
+02-mcp.md
+03-pipeline.md
+10-planning/  
+   11-discuss.md  
+   12-idea.md
+   13-packages.md  
+   14-prd.md
+   15-user-stories.md
+   16-mermaid.md  
+   17-create.md  
+20-roles/
+   21-devops.md
+   22-architect.md
+   23-backend.md
+   24-frontend.md
+   25-test.md
+   26-lead.md
+30-process
+   31-expand.md
+40-dev/  
+   41-open.md  
+   42-code.md  
+   43-verify.md  
+   44-close.md  
+50-final
+   51-docs.md
+   52-qa.md 
+   53-done.md 
+   54-pr.md
+```
