@@ -11,12 +11,10 @@ You do **not** write code here — you document models, migrations, factories, a
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.
-2. **Read `02-mcp.md`** to confirm available MCP servers.
-3. **Read `03-pipeline.md`** to understand where Data Architecture fits in the workflow.
-4. Locate the working epic folder created by `/00-start`.
-5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
-6. Confirm MCP servers are active:
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by `/00-start`.
+3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
+4. Confirm MCP servers are active:
    `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, and `github`.
 
 ---
@@ -39,8 +37,9 @@ You do **not** write code here — you document models, migrations, factories, a
    - Do not leave any open unanswered questions about data architecture.
 
 2. **Document the Final Plan**
+   - Create `.taskmaster/epics/<epic folder>/roles/02-architect.md` if it does not exist
    - Write the resulting plan in this file:
-     `.task-master/epics/<epic folder>/roles/02-architect.md`
+     `.taskmaster/epics/<epic folder>/roles/02-architect.md`
    - Use the following scaffold:
      ```
      # [Epic Title] — Data Architecture Plan
@@ -116,14 +115,6 @@ You do **not** write code here — you document models, migrations, factories, a
      - User Stories: [stories that define data needs]
      - Existing Models: [current models that may be affected]
      ```
-
-3. **git**
-```
-Data architecture documented for <epic title>
-
-Path: .task-master/epics/<epic folder>/roles/02-architect.md
-```
-
-4. **Reply**
+3. **Reply**
    - `The Data Architecture role path is <path to 02-architect.md>`
    - exactly that and nothing else

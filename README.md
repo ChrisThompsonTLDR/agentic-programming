@@ -11,13 +11,14 @@ This system implements a **5-phase agentic pipeline** that transforms high-level
 ### Core Pipeline Structure
 
 ```
-00-03: Foundation & Setup
-├── 00-start.md     - Initialize new epic
-├── 01-forbidden.md - Universal constraints & guardrails
-├── 02-mcp.md       - MCP server activation
-└── 03-pipeline.md  - Pipeline orchestration
+Foundation & Setup (00-03)
+├── commands/00-start.md       - Initialize new epic
+├── support/01-forbidden.md    - Universal constraints & guardrails
+├── support/02-mcp.md          - MCP server activation
+├── support/03-pipeline.md     - Pipeline orchestration
+└── support/04-rules.md        - Rule loader
 
-10-17: Planning Phase
+Planning Phase (10-17)
 ├── 11-discuss.md   - Product discovery
 ├── 12-idea.md      - Concept development
 ├── 13-packages.md  - Dependency analysis
@@ -26,7 +27,7 @@ This system implements a **5-phase agentic pipeline** that transforms high-level
 ├── 16-mermaid.md   - Architecture visualization
 └── 17-create.md    - Task breakdown
 
-20-26: Role Definition
+Role Definition (20-26)
 ├── 21-devops.md    - Infrastructure planning
 ├── 22-architect.md - System design
 ├── 23-backend.md   - Backend implementation
@@ -34,19 +35,23 @@ This system implements a **5-phase agentic pipeline** that transforms high-level
 ├── 25-test.md      - Testing strategy
 └── 26-lead.md      - Project leadership
 
-30-31: Process Management
+Process Management (30-31)
 └── 31-expand.md    - Task expansion & refinement
 
-40-44: Development Phase
+Development Phase (40-44)
 ├── 41-open.md      - Development initiation
 ├── 42-code.md      - Implementation
 ├── 43-verify.md    - Quality assurance
 └── 44-close.md     - Task completion
 
-50-53: Finalization
+Finalization (50-54)
 ├── 51-docs.md      - Documentation
 ├── 52-qa.md        - Quality audit
-└── 53-pr.md        - Pull request creation
+├── 53-done.md      - Epic completion
+└── 54-pr.md        - Pull request creation
+
+Operations (99)
+└── 99-rebake.md    - Re-bake epic artifacts
 ```
 
 > **📖 The command files shown in the pipeline structure above correspond to the agent roles listed below. Click any command number in the agent roles section to view detailed implementation.**
@@ -129,20 +134,25 @@ Multi-provider AI orchestration supporting:
 - **Quality Engineer** ([43-verify](commands/40-dev/43-verify.md)): Testing and validation
 - **Release Manager** ([44-close](commands/40-dev/44-close.md)): Feature completion and handover
 
-### 📋 **Finalization Phase (50-53)**
+### 📋 **Finalization Phase (50-54)**
 - **Technical Writer** ([51-docs](commands/50-final/51-docs.md)): Documentation creation
 - **Quality Auditor** ([52-qa](commands/50-final/52-qa.md)): Comprehensive quality review
-- **Integration Lead** ([53-pr](commands/50-final/53-pr.md)): Pull request and deployment preparation
+- **Completion Lead** ([53-done](commands/50-final/53-done.md)): Epic completion and knowledge capture
+- **Integration Lead** ([54-pr](commands/50-final/54-pr.md)): Pull request and deployment preparation
+
+### 🔄 **Operations (99)**
+- **Planning Steward** ([99-rebake](commands/99-rebake.md)): Re-bake epic artifacts and harmonize existing planning
 
 ## Universal Constraints & Guardrails
 
-All agents operate under strict **forbidden.md** constraints:
+All agents operate under strict **[support/01-forbidden.md](support/01-forbidden.md)** constraints:
 
 ### ✅ **Allowed Actions**
 - **Truth over assumption**: All data must trace to PRD, tasks, or user input
 - **Local-first operations**: All work within project workspace
 - **Non-destructive changes**: No modification of unrelated components
 - **MCP-orchestrated actions**: All operations through approved tools
+- **Rule-based execution**: Commands must load shared rules from `support/04-rules.md`
 
 ### ❌ **Forbidden Actions**
 - **Time estimation** or scope invention
@@ -150,6 +160,8 @@ All agents operate under strict **forbidden.md** constraints:
 - **External dependency addition without approval**
 - **Security credential exposure**
 - **Unapproved documentation modification**
+- **Direct manipulation** of task-master files (must use MCP tools)
+- **Speculative recommendations** or "Next steps" in output
 
 ### 🎯 **Quality Gates**
 - **Pint**: Code cleanliness and standards
@@ -157,6 +169,13 @@ All agents operate under strict **forbidden.md** constraints:
 - **Mutation Testing**: ≥70% coverage
 - **Performance**: p95 ≤500ms, ≤10 queries
 - **Error Tracking**: 0 unhandled exceptions
+
+### 📋 **Support Files**
+All commands reference these foundational files:
+- `support/01-forbidden.md` - Universal constraints and guardrails
+- `support/02-mcp.md` - MCP server activation and usage
+- `support/03-pipeline.md` - Pipeline orchestration guide
+- `support/04-rules.md` - Rule loader for epic workflows
 
 ## Getting Started
 
@@ -169,8 +188,9 @@ All agents operate under strict **forbidden.md** constraints:
 ### Configuration
 
 1. **Setup MCP Servers**: Configure `mcp.json` with your API keys
-2. **Initialize Epic**: Run `/00-start "Your Epic Title"`
-3. **Follow Pipeline**: Execute commands sequentially through each phase
+2. **Review Support Files**: All commands reference `support/01-forbidden.md`, `support/02-mcp.md`, `support/03-pipeline.md`, and `support/04-rules.md`
+3. **Initialize Epic**: Run `/00-start "Your Epic Title"`
+4. **Follow Pipeline**: Execute commands sequentially through each phase
 
 ### Example Workflow
 
@@ -207,7 +227,11 @@ All agents operate under strict **forbidden.md** constraints:
 # Finalization
 51-docs
 52-qa
-53-pr
+53-done
+54-pr
+
+# Operations (as needed)
+99-rebake
 ```
 
 ## Key Features
@@ -283,12 +307,46 @@ This system is designed as a **complete, self-contained workflow**. Each command
 1. **Single responsibility** per command
 2. **Clear input/output contracts**
 3. **MCP tool integration**
-4. **Constraint compliance**
+4. **Constraint compliance** with `support/01-forbidden.md`
 5. **Comprehensive documentation**
+
+### File Structure
+
+```
+.cursor/
+├── commands/          # Command implementations organized by phase
+│   ├── 00-start.md
+│   ├── 10-planning/
+│   ├── 20-roles/
+│   ├── 30-process/
+│   ├── 40-dev/
+│   ├── 50-final/
+│   └── 99-rebake.md
+├── support/           # Universal constraints and configuration
+│   ├── 01-forbidden.md
+│   ├── 02-mcp.md
+│   ├── 03-pipeline.md
+│   └── 04-rules.md
+├── rules/             # Epic-specific rules (epics/*.mdc)
+│   └── epics/
+└── mcp.json           # MCP server configuration
+```
 
 ## License
 
 This agentic workflow system is designed for **Laravel ecosystem development** but can be adapted for other frameworks with appropriate MCP server configuration.
+
+## Key Workflow Features
+
+### 🔄 **Re-baking Epics**
+The `99-rebake` command allows you to refactor and harmonize existing epic planning artifacts without creating new scope. Useful when requirements evolve or artifacts become stale.
+
+### 📝 **Epic Completion**
+The `53-done` command finalizes completed epics by:
+- Synthesizing delivery summaries
+- Updating epic task records
+- Recording knowledge graph insights
+- Marking epics as complete
 
 ---
 

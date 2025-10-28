@@ -11,12 +11,10 @@ You do **not** write code or create deployment scripts here — you document con
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.  
-2. **Read `02-mcp.md`** to confirm available MCP servers.  
-3. **Read `03-pipeline.md`** to understand where DevOps fits in the workflow.  
-4. Locate the working epic folder created by `/00-start`.  
-5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
-6. Confirm MCP servers are active:  
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by `/00-start`.  
+3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
+4. Confirm MCP servers are active:  
    `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, and `github`.
 
 ---
@@ -36,8 +34,8 @@ You do **not** write code or create deployment scripts here — you document con
    - Do not leave any open unanswered questions about DevOps.
 
 2. **Document the Final Plan**
-   - Write the resulting plan in this file:  
-     `.task-master/epics/<epic folder>/roles/01-devops.md`
+   - Create `.taskmaster/epics/<epic folder>/roles/01-devops.md` if it does not exist
+   - Write the resulting plan in this file: `.taskmaster/epics/<epic folder>/roles/01-devops.md`
    - Use the following scaffold:
      ```
      # [Epic Title] — DevOps Plan
@@ -74,14 +72,6 @@ You do **not** write code or create deployment scripts here — you document con
      ## Notes
      [any relevant notes]
      ```
-
-4. **git**
-```
-DevOps plan documented for <epic title>
-
-Path: .task-master/epics/<epic folder>/roles/01-devops.md
-```
-
-5. **Reply**
+4. **Reply**
    - `The DevOps plan path is <path to 01-devops.md>`  
    - exactly that and nothing else

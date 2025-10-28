@@ -9,7 +9,9 @@ If a title was supplied inline (e.g., `00-start "RPG Mounts System"`), skip the 
 ---
 ## Preparation
 
-* read [01-forbidden.md](01-forbidden.md)
+* read [01-forbidden.md](./01-forbidden.md)
+* read [02-mcp.md](./02-mcp.md)
+* read [03-pipeline.md](./03-pipeline.md)
 
 
 ---
@@ -33,7 +35,7 @@ If a title was supplied inline (e.g., `00-start "RPG Mounts System"`), skip the 
 
 3. **Generate Folder**
    - Path:  
-     `.task-master/epics/${task_id.padStart(3,'0')}_${slug}/`
+     `.taskmaster/epics/${task_id.padStart(3,'0')}_${slug}/`
    - Create directory recursively if missing.
 
 4. **Update the epic**

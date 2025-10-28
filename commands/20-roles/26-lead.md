@@ -11,12 +11,10 @@ You do **not** alter code or tasks — you verify completeness, feasibility, and
 ---
 
 ## Preparation
-1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints.
-2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
-3. **Read [03-pipeline.md](../03-pipeline.md)** to understand where this audit fits.  
-4. Locate the working epic folder created by [00-start](../00-start.md).  
-5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
-6. Confirm MCP servers:  
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by [00-start](../00-start.md).  
+3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
+4. Confirm MCP servers:  
    `task-master-ai`, `context7`, `perplexity`, `deepwiki`, `laravel-boost`, `sequentialthinking`.
 
 ---
@@ -40,8 +38,8 @@ You do **not** alter code or tasks — you verify completeness, feasibility, and
    - If discrepancies are detected, list them precisely in the summary under "Findings".
 
 3. **Compose Lead Developer Summary**
-   - Write findings and confirmations into this file:  
-     `.task-master/epics/<epic folder>/roles/06-lead.md`
+   - Create `.taskmaster/epics/<epic folder>/roles/06-lead.md` if it does not exist
+   - Write findings and confirmations into `.taskmaster/epics/<epic folder>/roles/06-lead.md`
    - Use the scaffold:
      ```
      # [Epic Title] — Lead Developer Summary
@@ -76,13 +74,6 @@ You do **not** alter code or tasks — you verify completeness, feasibility, and
      - No drift, duplication, or contradiction is present.  
      - File ends with clear readiness recommendation.
 
-5. **git**
-```
-Lead Developer summary completed for <epic title>
-
-Path: .task-master/epics/<epic folder>/roles/06-lead.md
-```
-
-6. **Reply**
+5. **Reply**
    - `The Lead Developer summary path is <path to 06-lead.md>`  
    - exactly that and nothing else

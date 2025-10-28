@@ -11,12 +11,10 @@ You do **not** write tests here — you document scope, tools, data, and reporti
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.  
-2. **Read `02-mcp.md`** to confirm available MCP servers.  
-3. **Read `03-pipeline.md`** to understand where Testing fits.  
-4. Locate the working epic folder created by `/00-start`.  
-5. **Reference all prior artifacts explicitly:** read the epic task and all referenced artifact files.  
-6. Confirm MCP servers are active:  
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by `/00-start`.  
+3. **Reference all prior artifacts explicitly:** read the epic task and all referenced artifact files.  
+4. Confirm MCP servers are active:  
    `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, `github`.
 
 ---
@@ -39,8 +37,9 @@ You do **not** write tests here — you document scope, tools, data, and reporti
    - Do not leave open questions about Testing.
 
 2. **Document the Final Plan**
+   - Create `.taskmaster/epics/<epic folder>/roles/05-testing.md` if it does not exist
    - Write the resulting plan in this file:  
-     `.task-master/epics/<epic folder>/roles/05-testing.md`
+     `.taskmaster/epics/<epic folder>/roles/05-testing.md`
    - Use the scaffold:
      ```
      # [Epic Title] — Testing Plan
@@ -126,14 +125,5 @@ You do **not** write tests here — you document scope, tools, data, and reporti
      ## Notes
      [any relevant notes]
      ```
-
-3. **git**
-```
-Testing plan documented for <epic title>
-
-Path: .task-master/epics/<epic folder>/roles/05-testing.md
-```
-
-4. **Reply**
-   - `The Testing role path is <path to 05-testing.md>`  
-   - exactly that and nothing else
+3. **Reply**
+   - `

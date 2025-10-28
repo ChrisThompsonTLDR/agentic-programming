@@ -11,12 +11,10 @@ You do **not** write code here — you document contracts and decisions for late
 ---
 
 ## Preparation
-1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints.
-2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
-3. **Read [03-pipeline.md](../03-pipeline.md)** to understand where Backend fits in the workflow.  
-4. Locate the working epic folder created by [00-start](../00-start.md).  
-5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
-6. Confirm MCP servers are active:  
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by [00-start](../00-start.md).  
+3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
+4. Confirm MCP servers are active:  
    `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, and `github`.
 
 ---
@@ -39,8 +37,9 @@ You do **not** write code here — you document contracts and decisions for late
    - Do not leave any open unanswered questions about Backend.
 
 2. **Document the Final Plan**
+   - Create `.taskmaster/epics/<epic folder>/roles/03-backend.md` if it does not exist
    - Write the resulting plan in this file:  
-     `.task-master/epics/<epic folder>/roles/03-backend.md`
+     `.taskmaster/epics/<epic folder>/roles/03-backend.md`
    - Use the following scaffold:
      ```
      # [Epic Title] — Backend Plan
@@ -85,14 +84,6 @@ You do **not** write code here — you document contracts and decisions for late
      ## Notes
      [any relevant notes]
      ```
-
-4. **git**
-```
-Backend plan documented for <epic title>
-
-Path: .task-master/epics/<epic folder>/roles/03-backend.md
-```
-
-5. **Reply**
+4. **Reply**
    - `The Backend role path is <path to 03-backend.md>`  
    - exactly that and nothing else

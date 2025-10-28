@@ -9,11 +9,9 @@ You do not design implementation details. You translate the PRD and prior artifa
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.  
-2. **Read `02-mcp.md`** to confirm available tools.  
-3. **Read `03-pipeline.md`** to understand workflow context.  
-4. Locate the working epic folder created by `/00-start`.  
-5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by `/00-start`.  
+3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
 
 ---
 
@@ -21,8 +19,8 @@ You do not design implementation details. You translate the PRD and prior artifa
 
 1. **Initialize**
    - Create or open:
-     - `.task-master/epics/<epic folder>/06-mermaid.md` 
-     - `.task-master/epics/<epic folder>/diagrams/` (directory for per-diagram files)
+     - `.taskmaster/epics/<epic folder>/06-mermaid.md` 
+     - `.taskmaster/epics/<epic folder>/diagrams/` (directory for per-diagram files)
 
 2. **Draft Diagram Set**
    - Produce 1–4 diagrams that reflect the PRD:
@@ -105,7 +103,7 @@ You do not design implementation details. You translate the PRD and prior artifa
    - Call `mcp_task_master_ai_update_task`  
      **Parameters:**
      - `id`: epic_id  
-     - `file`: `"epics.json"`  
+     - `tag`: `"epics"`
      - `prompt`: `"Add 06-mermaid.md and all ./diagrams/*.mmd paths to the numbered artifacts list."`
 
 6. **git**

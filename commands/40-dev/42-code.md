@@ -11,12 +11,10 @@ You do **not** plan or design here — you implement complete functionality base
 ---
 
 ## Preparation
-1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints.
-2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
-3. **Read [03-pipeline.md](../03-pipeline.md)** to understand where code implementation fits in the workflow.  
-4. Locate the working epic folder created by [00-start](../00-start.md).  
-5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
-6. Confirm MCP servers are active:  
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by [00-start](../00-start.md).  
+3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
+4. Confirm MCP servers are active:  
    `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, and `github`.
 
 ---
@@ -28,13 +26,6 @@ You do **not** plan or design here — you implement complete functionality base
    - Apply all patterns, research findings, and best practices from previous steps.
    - Ensure comprehensive testing and quality standards.
 
-2. **git**
-```
-task <task_id> implemented
-
-<summarize what was done>
-```
-
-3. **Reply**
+2. **Reply**
    - `Task <task-id> implementation completed and ready for verification`  
    - exactly that and nothing else

@@ -28,6 +28,7 @@
    44-close.md  
 50-final
    51-docs.md
-   52-qa.md  
-   53-pr.md
+   52-qa.md 
+   53-done.md 
+   54-pr.md
 ```

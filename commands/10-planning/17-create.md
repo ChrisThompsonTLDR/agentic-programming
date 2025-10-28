@@ -10,18 +10,16 @@ You do **not** create a new task — you **edit the existing epic** to finalize 
 ---
 
 ## Preparation
-1. **Read [01-forbidden.md](../01-forbidden.md)** and enforce all constraints.
-2. **Read [02-mcp.md](../02-mcp.md)** to confirm available MCP servers.
-3. **Read [03-pipeline.md](../03-pipeline.md)** to verify workflow context.  
-4. Locate the working epic folder created by [00-start](../00-start.md).  
-5. **Reference all prior artifacts explicitly:**
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by [00-start](../00-start.md).  
+3. **Reference all prior artifacts explicitly:**
    - `<epic>/01-discuss.md`
    - `<epic>/02-idea.md`
    - `<epic>/03-packages.md`
    - `<epic>/04-prd.md`
    - `<epic>/05-stories.md`
    - `<epic>/06-mermaid.md`
-6. Confirm MCP servers:  
+7. Confirm MCP servers:  
    `task-master-ai`, `context7`, `perplexity`, `deepwiki`, `laravel-boost`, `sequentialthinking`, `knowledgegraph`.
 
 ---
@@ -31,7 +29,7 @@ You do **not** create a new task — you **edit the existing epic** to finalize 
 1. **Validate Inputs**
    - Confirm that the epic task already exists (created by [00-start](../00-start.md)).  
    - Extract its `epic_id` and path:  
-     `.task-master/epics/<epic_id>_<slug>/`.  
+     `.taskmaster/epics/<epic_id>_<slug>/`.  
    - Verify all referenced artifacts in *Preparation step 5* exist.  
    - Read `<epic>/04-prd.md` to gather:
      - Title and summary  
@@ -64,7 +62,7 @@ You do **not** create a new task — you **edit the existing epic** to finalize 
    - Call `mcp_task_master_ai_update_task`  
      **Parameters:**  
      - `id`: epic_id  
-     - `file`: `"epics.json"`  
+     - `tag`: `"epics"`
      - `prompt`: `"Replace existing description with finalized summary and confirm artifact linkage."`
    - Preserve the existing status (`deferred`).
 
@@ -72,7 +70,7 @@ You do **not** create a new task — you **edit the existing epic** to finalize 
 ```
 Epic finalized for <epic title>
 
-Folder: .task-master/epics/<epic_id>_<slug>/
+Folder: .taskmaster/epics/<epic_id>_<slug>/
 ```
 
 5. **Reply**

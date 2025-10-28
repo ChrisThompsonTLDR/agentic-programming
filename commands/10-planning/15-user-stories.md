@@ -10,12 +10,10 @@ You do **not** write acceptance tests or implementation steps — you frame valu
 ---
 
 ## Preparation
-1. **Read `01-forbidden.md`** and enforce all constraints.  
-2. **Read `02-mcp.md`** to understand available MCP tools.  
-3. **Read `03-pipeline.md`** to confirm workflow order.  
-4. Locate the working epic folder created by `/00-start`.  
-5. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
-6. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
+1. **Read all files in `.cursor/support`**.
+2. Locate the working epic folder created by `/00-start`.  
+3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
+4. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
 
 ---
 
@@ -23,14 +21,14 @@ You do **not** write acceptance tests or implementation steps — you frame valu
 
 1. **Initialize**
    - Create directory:  
-     `.task-master/epics/<epic folder>/stories/`
+     `.taskmaster/epics/<epic folder>/stories/`
    - Create or open summary file:  
-     `.task-master/epics/<epic folder>/05-stories.md`
+     `.taskmaster/epics/<epic folder>/05-stories.md`
 
 2. **Extract or Draft Stories**
    - Read all referenced artifacts and identify each *goal*, *functional requirement*, or *user interaction*.  
    - For each distinct scenario, create a new file:  
-     `.task-master/epics/<epic folder>/stories/<user type slug>.md`
+     `.taskmaster/epics/<epic folder>/stories/<user type slug>.md`
 
 3. **Story Template**
    Each story file must use this format:
@@ -72,7 +70,7 @@ You do **not** write acceptance tests or implementation steps — you frame valu
    - Call `mcp_task_master_ai_update_task`
      **Parameters:**
      - `id`: epic_id
-     - `file`: `"epics.json"`
+     - `tag`: `"epics"`
      - `prompt`: `"Add 05-stories.md and all ./stories/*.md paths to the numbered artifacts list."`
 
 6. **git**
