@@ -14,8 +14,6 @@ You do **not** alter code or tasks — you verify completeness, feasibility, and
 1. **Read all files in `.cursor/support`**.
 2. Locate the working epic folder created by [00-start](../00-start.md).  
 3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.  
-4. Confirm MCP servers:  
-   `task-master-ai`, `context7`, `perplexity`, `deepwiki`, `laravel-boost`, `sequentialthinking`.
 
 ---
 

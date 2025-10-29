@@ -15,7 +15,6 @@ You are a **Laravel Package Researcher**. You produce one **file per package** u
    - Read `composer.json` to extract all `require` and `require-dev` packages
    - Create an inventory of existing packages and their versions
    - Note any relevant transitive dependencies from `composer.lock` (read selectively if large)
-8. Ensure MCP servers are active: `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
 
 ---
 ## Steps

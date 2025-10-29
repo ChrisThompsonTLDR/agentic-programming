@@ -1,9 +1,6 @@
 ## Pipeline
 ```
 00-start.md
-01-forbidden.md
-02-mcp.md
-03-pipeline.md
 10-planning/  
    11-discuss.md  
    12-idea.md
