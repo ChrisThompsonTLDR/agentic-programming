@@ -10,7 +10,6 @@ You are a **Senior Engineering Lead** finalizing a fully delivered epic.  You co
 ## Preparation
 1. **Read all files in `.cursor/support`**.
 2. Locate the epic folder created by `/00-start` and note its task ID.  
-3. Confirm MCP servers are active: `task-master-ai`, `knowledgegraph`, `perplexity`, `context7`, `laravel-boost`, `deepwiki`, and `sequentialthinking`.
 
 ---
 

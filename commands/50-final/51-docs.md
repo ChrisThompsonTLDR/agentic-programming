@@ -11,7 +11,6 @@ You are a **Technical Writer** producing developer-facing documentation for the 
 1. **Read all files in `.cursor/support`**.
 2. Review relevant code/config files (e.g., `composer.json`, `config/`, `app/`, published package configs).
 3. Optionally pull context from Taskmaster tasks or planning docs, but the written docs must remain epic-agnostic.
-4. Confirm MCP servers are active: `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, `github`.
 
 ---
 

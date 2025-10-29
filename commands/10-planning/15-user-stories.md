@@ -13,7 +13,6 @@ You do **not** write acceptance tests or implementation steps — you frame valu
 1. **Read all files in `.cursor/support`**.
 2. Locate the working epic folder created by `/00-start`.  
 3. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact files.
-4. Ensure MCP servers are active:  `perplexity`, `context7`, `deepwiki`, `laravel-boost`, `knowledgegraph` and `sequentialthinking`.
 
 ---
 
@@ -28,7 +27,7 @@ You do **not** write acceptance tests or implementation steps — you frame valu
 2. **Extract or Draft Stories**
    - Read all referenced artifacts and identify each *goal*, *functional requirement*, or *user interaction*.  
    - For each distinct scenario, create a new file:  
-     `.taskmaster/epics/<epic folder>/stories/<user type slug>.md`
+     `.taskmaster/epics/<epic folder>/stories/<role-slug>.md` (slug the role by lowercasing and replacing spaces with hyphens, e.g., `narrative-designer.md`, `api-client.md`)
 
 3. **Story Template**
    Each story file must use this format:

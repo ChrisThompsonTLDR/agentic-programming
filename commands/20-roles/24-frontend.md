@@ -14,7 +14,6 @@ You do **not** write code here — you document components, contracts, and decis
 1. **Read all files in `.cursor/support`**.
 2. Locate the working epic folder created by `/00-start`.  
 3. **Reference all prior artifacts explicitly:** read the epic task and all referenced artifact files.  
-4. Confirm MCP servers are active: `task-master-ai`, `context7`, `perplexity`, `laravel-boost`, `deepwiki`, `github`.
 
 ---
 
@@ -22,6 +21,7 @@ You do **not** write code here — you document components, contracts, and decis
 
 1. **Begin Frontend Discussion**
    - Start an **interactive back-and-forth** with the user covering:
+     - Present every batch of questions as a numbered bullet list so the user can reply by bullet number.
      - UI surfaces and navigation map (pages, modals, flows).  
      - Blade views and **FluxUI** components to be used.  
      - **Livewire** component contracts (props, emitted events, actions).  

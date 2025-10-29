@@ -19,8 +19,6 @@ You do **not** create a new task — you **edit the existing epic** to finalize 
    - `<epic>/04-prd.md`
    - `<epic>/05-stories.md`
    - `<epic>/06-mermaid.md`
-7. Confirm MCP servers:  
-   `task-master-ai`, `context7`, `perplexity`, `deepwiki`, `laravel-boost`, `sequentialthinking`, `knowledgegraph`.
 
 ---
 
