@@ -1,4 +1,3 @@
-Ensure MCP servers are active
 1. `task-master-ai`,
 2. `context7`,
 3. `perplexity`

@@ -15,6 +15,7 @@ You do **not** write code here — you document preparation, analysis, and readi
 2. do not modify in any way anything related to the `epics` tag
 3. Locate the working epic folder created by `/00-start`.  
 4. **Reference all prior artifacts explicitly:** read the epic task and read all the referenced artifact 
+5. Search your knowledge graph for related memories and information.
 
 ---
 
