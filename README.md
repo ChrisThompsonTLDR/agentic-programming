@@ -50,6 +50,16 @@ Finalization (50-54)
 ├── 53-done.md      - Epic completion
 └── 54-pr.md        - Pull request creation
 
+PR Review Phase (60-64)
+├── 61-review.md    - PR review analysis
+├── 62-address.md   - Review feedback implementation
+├── 63-verify.md    - Review changes verification
+└── 64-commit.md    - Review changes commit & push
+
+Research Phase (80-82)
+├── 81-research.md  - Package research
+└── 82-gap.md       - Gap analysis
+
 Operations (99)
 └── 99-rebake.md    - Re-bake epic artifacts
 ```
@@ -140,6 +150,16 @@ Multi-provider AI orchestration supporting:
 - **Completion Lead** ([53-done](commands/50-final/53-done.md)): Epic completion and knowledge capture
 - **Integration Lead** ([54-pr](commands/50-final/54-pr.md)): Pull request and deployment preparation
 
+### 🔀 **PR Review Phase (60-64)**
+- **Code Review Engineer** ([61-review](commands/60-git/61-review.md)): PR review analysis and documentation
+- **Development Engineer** ([62-address](commands/60-git/62-address.md)): Review feedback implementation
+- **Quality Engineer** ([63-verify](commands/60-git/63-verify.md)): Review changes verification
+- **Release Engineer** ([64-commit](commands/60-git/64-commit.md)): Review changes commit and push
+
+### 🔬 **Research Phase (80-82)**
+- **Package Research Partner** ([81-research](commands/80-research/81-research.md)): Laravel package research and evaluation
+- **Gap Analysis Partner** ([82-gap](commands/80-research/82-gap.md)): Comparative analysis between solutions
+
 ### 🔄 **Operations (99)**
 - **Planning Steward** ([99-rebake](commands/99-rebake.md)): Re-bake epic artifacts and harmonize existing planning
 
@@ -229,6 +249,16 @@ All commands reference these foundational files:
 52-qa
 53-done
 54-pr
+
+# PR Review (when feedback received)
+61-review
+62-address
+63-verify
+64-commit
+
+# Research (as needed)
+81-research  # Package research
+82-gap       # Gap analysis
 
 # Operations (as needed)
 99-rebake
@@ -321,6 +351,8 @@ This system is designed as a **complete, self-contained workflow**. Each command
 │   ├── 30-process/
 │   ├── 40-dev/
 │   ├── 50-final/
+│   ├── 60-git/
+│   ├── 80-research/
 │   └── 99-rebake.md
 ├── support/           # Universal constraints and configuration
 │   ├── 01-forbidden.md

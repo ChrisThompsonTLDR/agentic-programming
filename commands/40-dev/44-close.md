@@ -26,30 +26,49 @@ You do **not** implement new code here — you finalize, preserve knowledge, and
    - Ensure all task dependencies and requirements are fully satisfied.
    - Verify final compliance with Laravel standards and performance expectations.
 
-2. **Mark Complete Task as Finalized**
+2. **Git Commit**
+   - Create a commit with the implemented changes.
+   - Use a simple, descriptive title that summarizes the task.
+   - Include in the commit body:
+     - Epic ID or reference
+     - Task ID
+     - Subtask ID (if applicable)
+     - Short description of the changes
+   - Commit format example:
+     ```
+     Implemented [feature/fix name]
+     
+     Epic: [epic-id]
+     Task: [task-id]
+     Subtask: [subtask-id] (if applicable)
+     
+     [Brief description of changes]
+     ```
+
+3. **Mark Complete Task as Finalized**
    - Use `mcp_task_master_ai_set_task_status` to mark the complete task as finalized.
    - Use `tag: '<tag for this epic>'` to target the correct tag and task
    - Update workflow state to reflect complete task finalization.
 
-3. **Enhanced Knowledge Preservation**
+4. **Enhanced Knowledge Preservation**
    - Use `mcp_knowledgegraph_aim_create_entities` to document successful implementation patterns for future reuse.
    - Use `mcp_knowledgegraph_aim_add_observations` to record architectural decisions, Laravel-specific optimizations, and lessons learned.
    - Link to enhanced research findings from planning artifacts.
    - Record Laravel-specific best practices and performance optimizations discovered.
    - Update knowledge graph with implementation insights and patterns.
 
-4. **Comprehensive Implementation Review**
+5. **Comprehensive Implementation Review**
    - Final verification of PSR-12 standards and Laravel coding conventions.
    - Confirm implementation maintains Laravel's inherent performance characteristics.
    - Ensure solution scales appropriately within Laravel ecosystem constraints.
    - Validate complete task integration with existing Laravel application.
 
-5. **Workflow Continuity Planning**
+6. **Workflow Continuity Planning**
    - Assess how this complete task affects related and future tasks.
    - Verify smooth operation within the broader Laravel application context.
    - Ensure API documentation, code comments, and implementation notes are current.
    - Prepare context for subsequent development phases.
 
-6. **Reply**
+7. **Reply**
    - `Task <task-id> closure completed`  
    - exactly that and nothing else
