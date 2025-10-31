@@ -21,16 +21,21 @@ You do **not** write code here — you document preparation, analysis, and readi
 
 ## Steps
 
-1. **Verify Dependencies**
+1. **Preflight: Git Status Check**
+   - Run `git status` to verify the working tree is clean.
+   - Confirm there are no uncommitted files, unstaged changes, or untracked files that should be committed.
+   - If the working tree is not clean, halt execution and inform the user to commit or stash their changes before proceeding.
+
+2. **Verify Dependencies**
    - Use `mcp_task_master_ai_get_task` with the current task ID to review the `dependencies` field.
    - Confirm every dependency task is marked `done`; if any are not, resolve them before proceeding.
 
-2. **Set Task Status**
+3. **Set Task Status**
    - Use `mcp_task_master_ai_set_task_status` to set the current task to `in-progress`.
    - Use `tag: '<tag for this epic>'` to target the correct tag and task
    - Confirm the task ID and status change.
 
-3. **Analyze Task and Artifacts**
+4. **Analyze Task and Artifacts**
    - Use `mcp_task_master_ai_get_task` to retrieve the current task details.
    - Read all referenced artifacts from the epic folder.
    - Analyze task scope, requirements, and dependencies.
@@ -39,7 +44,7 @@ You do **not** write code here — you document preparation, analysis, and readi
    - Determine testing and validation requirements.
    - Define success criteria and completion definition.
 
-4. **Reply**
+5. **Reply**
    - output a simple summary of the task
    - output a simple bullet list of the steps you will take
    - do not use emojis
