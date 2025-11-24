@@ -88,6 +88,7 @@ class GuardrailSupervisor:
             "next steps:",
             "next steps\n",
             "recommendations:",
+            "recommendation:",
             "to do next",
             "consider adding",
             "you might want",

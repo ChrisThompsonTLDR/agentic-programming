@@ -47,6 +47,7 @@ class PipelineController:
         PipelinePhase.PROCESS,
         PipelinePhase.DEVELOPMENT,
         PipelinePhase.FINALIZATION,
+        PipelinePhase.OPERATIONS,
     ]
     
     # Preview length for instruction truncation in simulated execution
@@ -176,6 +177,7 @@ class PipelineController:
             "process": [],
             "development": [],
             "finalization": [],
+            "operations": [],
         }
         
         # Execute each phase in order

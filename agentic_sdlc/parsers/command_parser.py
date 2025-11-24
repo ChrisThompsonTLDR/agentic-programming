@@ -63,7 +63,10 @@ class CommandParser:
             
             # Map to phase using first digit(s)
             # 00 -> foundation, 10-19 -> planning, 20-29 -> roles, etc.
-            if phase_prefix.startswith("0") and phase_prefix != "00":
+            # Check for exact matches first (e.g., "00", "99")
+            if phase_prefix in self.PHASE_MAP:
+                phase_key = phase_prefix
+            elif phase_prefix.startswith("0") and phase_prefix != "00":
                 phase_key = "00"  # 01-09 -> foundation
             elif len(phase_prefix) >= 2:
                 phase_key = phase_prefix[0] + "0"  # 11 -> 10, 23 -> 20, etc.
@@ -129,8 +132,9 @@ class CommandParser:
     
     def _extract_section(self, content: str, section_name: str) -> Optional[str]:
         """Extract content of a specific section."""
-        # Match section header
-        pattern = rf'##\s+{re.escape(section_name)}\s*\n(.*?)(?=\n##|\Z)'
+        # Match section header - look for ## followed by section name
+        # Then capture everything until the next ## (not ###) or end of string
+        pattern = rf'##\s+{re.escape(section_name)}\s*\n(.*?)(?=\n##\s+[^#]|\Z)'
         match = re.search(pattern, content, re.DOTALL)
         
         if match:
