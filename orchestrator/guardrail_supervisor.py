@@ -211,9 +211,19 @@ class GuardrailSupervisor:
         if "credential" in rule_lower or "token" in rule_lower:
             for key, value in action_data.items():
                 if isinstance(value, str):
-                    # Simple pattern matching for potential secrets
-                    if re.search(r'(password|token|key|secret)\s*[:=]\s*["\']?[\w-]{10,}', value, re.IGNORECASE):
-                        return True
+                    # Look for common secret patterns with high confidence
+                    # Avoid false positives by requiring specific formats
+                    secret_patterns = [
+                        r'(?:password|token|key|secret|api[_-]?key)\s*[:=]\s*["\'][\w\-]{16,}["\']',  # Quoted secrets
+                        r'bearer\s+[\w\-\.]{20,}',  # Bearer tokens
+                        r'sk-[\w]{20,}',  # OpenAI-style keys
+                        r'ghp_[\w]{36,}',  # GitHub personal access tokens
+                        r'glpat-[\w\-]{20,}',  # GitLab tokens
+                    ]
+                    
+                    for pattern in secret_patterns:
+                        if re.search(pattern, value, re.IGNORECASE):
+                            return True
                         
         return False
     

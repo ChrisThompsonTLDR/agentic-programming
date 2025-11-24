@@ -1,6 +1,7 @@
 """
 AgentFactory - Creates agent instances from parsed markdown definitions.
 """
+import re
 from typing import Dict, Any, Optional
 from pathlib import Path
 
@@ -46,13 +47,19 @@ class Agent:
         context = context or {}
         
         # Hypothetical OpenAI SDK usage (placeholder)
-        # In real implementation:
-        # response = openai.Agent.create(
+        # In real implementation, using Assistants API:
+        # assistant = openai.beta.assistants.create(
         #     model="gpt-4",
         #     instructions=self.system_prompt,
-        #     messages=[{"role": "user", "content": user_input}],
         #     tools=[...],  # MCP tools would be configured here
         # )
+        # thread = openai.beta.threads.create()
+        # message = openai.beta.threads.messages.create(
+        #     thread_id=thread.id,
+        #     role="user",
+        #     content=user_input
+        # )
+        # run = openai.beta.threads.runs.create(thread_id=thread.id, assistant_id=assistant.id)
         
         print(f"\n{'='*60}")
         print(f"[{self.command_number}] Executing: {self.title}")
@@ -160,7 +167,6 @@ class AgentFactory:
     
     def _extract_forbidden_section(self, content: str) -> str:
         """Extract the forbidden actions section."""
-        import re
         match = re.search(
             r'##\s+Forbidden Actions\s*\n(.*?)(?=^##\s|\Z)',
             content,
@@ -173,7 +179,6 @@ class AgentFactory:
         keywords = []
         
         # Look for lines starting with ❌
-        import re
         matches = re.findall(r'❌\s+(?:Do not|Never|No)\s+(.+?)(?:\.|$)', content)
         
         for match in matches:
@@ -190,7 +195,6 @@ class AgentFactory:
     def _extract_principles(self, content: str) -> list:
         """Extract global principles."""
         principles = []
-        import re
         
         # Look for lines with checkmarks
         matches = re.findall(r'[-*]\s+\*\*([^:]+):\*\*\s+(.+)', content)
