@@ -348,6 +348,40 @@ The `53-done` command finalizes completed epics by:
 - Recording knowledge graph insights
 - Marking epics as complete
 
+## Headless SDLC Orchestrator
+
+A **Python-based orchestrator** that transforms the markdown-based agent definitions into executable code objects. This enables programmatic automation of the SDLC pipeline.
+
+### 🚀 **Quick Start**
+
+```bash
+# Display pipeline structure
+python main.py --show-pipeline
+
+# List all available agents
+python main.py --list-agents
+
+# Execute full pipeline
+python main.py "Create user authentication system"
+
+# Execute single agent
+python main.py --command 22 "Design data architecture"
+
+# Run examples
+python examples.py
+```
+
+### 📦 **Components**
+
+- **MarkdownParser**: Extracts agent definitions from markdown files
+- **AgentFactory**: Creates agent instances with guardrails
+- **GuardrailSupervisor**: Enforces constraints from `support/01-forbidden.md`
+- **PipelineController**: Orchestrates workflow phases
+
+### 📖 **Documentation**
+
+See [orchestrator/README.md](orchestrator/README.md) for complete documentation, API reference, and integration guide.
+
 ---
 
 **Built for Cursor** • **MCP-Powered** • **Quality-First** • **Traceable Development**
