@@ -265,7 +265,7 @@ class MCPIntegration:
             if any(func_name.startswith(prefix) for prefix in relevant_prefixes):
                 filtered.append(func)
         
-        return filtered if filtered else all_functions
+        return filtered
     
     def format_function_call_result(self, function_name: str, result: Any) -> str:
         """Format MCP function call result for agent consumption."""
