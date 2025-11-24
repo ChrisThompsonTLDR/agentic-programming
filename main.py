@@ -139,6 +139,7 @@ def list_all_agents(md_parser):
     print("="*70 + "\n")
     
     phases = md_parser.get_commands_by_phase()
+    repo_root = get_repo_root()
     
     for phase_name in ["Foundation", "Planning", "Role Definition", "Process", "Development", "Finalization"]:
         if phase_name in phases:
@@ -150,8 +151,14 @@ def list_all_agents(md_parser):
                 title = agent_def.get("title", "Unknown")
                 filepath = agent_def.get("filepath", "")
                 
+                # Safely calculate relative path
+                try:
+                    rel_path = Path(filepath).relative_to(repo_root)
+                except (ValueError, TypeError):
+                    rel_path = Path(filepath).name
+                
                 print(f"  [{cmd_num}] {title}")
-                print(f"      File: {Path(filepath).relative_to(Path(filepath).parent.parent.parent)}")
+                print(f"      File: {rel_path}")
     
     print("\n" + "="*70 + "\n")
 
