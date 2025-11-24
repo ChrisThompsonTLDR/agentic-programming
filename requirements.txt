@@ -1,0 +1,12 @@
+# Headless SDLC Orchestrator Dependencies
+# Python 3.8+ required
+
+# Note: This is a functional scaffold demonstrating how markdown-based
+# agents can be transformed into code objects. In a production environment,
+# you would add:
+# - openai>=1.0.0  # For OpenAI Agents SDK
+# - pydantic>=2.0.0  # For data validation
+# - python-dotenv>=1.0.0  # For environment configuration
+
+# Currently no external dependencies required for basic functionality
+# All functionality uses Python standard library
