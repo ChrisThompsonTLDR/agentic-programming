@@ -49,6 +49,9 @@ class PipelineController:
         PipelinePhase.FINALIZATION,
     ]
     
+    # Preview length for instruction truncation in simulated execution
+    INSTRUCTION_PREVIEW_LENGTH = 200
+    
     def __init__(
         self,
         client: OpenAI,
@@ -320,7 +323,8 @@ class PipelineController:
         """Simulate agent execution (placeholder for actual OpenAI Agents SDK call)."""
         # This is a placeholder - in production, this would use the OpenAI Agents SDK
         # to create and run the agent
-        return f"Simulated output from agent {agent_id}\n\nAgent would execute based on:\n{agent_config['instructions'][:200]}..."
+        preview = agent_config['instructions'][:self.INSTRUCTION_PREVIEW_LENGTH]
+        return f"Simulated output from agent {agent_id}\n\nAgent would execute based on:\n{preview}..."
     
     def get_pipeline_status(self) -> Dict[str, Any]:
         """Get current pipeline status."""

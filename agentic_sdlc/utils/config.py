@@ -1,7 +1,7 @@
 """Configuration management for the orchestrator."""
 
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 import json
 import os
@@ -69,7 +69,7 @@ class OrchestratorConfig:
             mcp_config=None,
         )
     
-    def validate(self) -> list[str]:
+    def validate(self) -> List[str]:
         """Validate configuration and return list of errors."""
         errors = []
         
