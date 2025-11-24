@@ -1,6 +1,7 @@
 """Pipeline controller for orchestrating agent workflows."""
 
 import json
+import re
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from dataclasses import dataclass
@@ -126,6 +127,16 @@ class PipelineController:
         
         # Update state
         self.state.epic_title = epic_title
+        
+        if result.get("success"):
+            epic_id = self._extract_epic_id(result)
+            if epic_id:
+                self.state.epic_id = epic_id
+            else:
+                print("⚠️  00-start agent completed without providing an epic ID")
+        else:
+            print("⚠️  00-start agent failed; epic ID not initialized")
+        
         self.state.current_phase = PipelinePhase.PLANNING
         
         return result
@@ -327,6 +338,51 @@ class PipelineController:
         # to create and run the agent
         preview = agent_config['instructions'][:self.INSTRUCTION_PREVIEW_LENGTH]
         return f"Simulated output from agent {agent_id}\n\nAgent would execute based on:\n{preview}..."
+    
+    def _extract_epic_id(self, agent_result: Dict[str, Any]) -> Optional[str]:
+        """Extract epic ID from an agent result when possible."""
+        if not agent_result:
+            return None
+        
+        # Check common fields first
+        for key in ("epic_id", "task_id", "id"):
+            value = agent_result.get(key)
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+        
+        for field in ("context", "metadata"):
+            nested = agent_result.get(field)
+            if isinstance(nested, dict):
+                for key in ("epic_id", "task_id", "id"):
+                    value = nested.get(key)
+                    if isinstance(value, str) and value.strip():
+                        return value.strip()
+        
+        output = agent_result.get("output")
+        if isinstance(output, dict):
+            for key in ("epic_id", "task_id", "id"):
+                value = output.get(key)
+                if isinstance(value, str) and value.strip():
+                    return value.strip()
+            
+            nested_context = output.get("context")
+            if isinstance(nested_context, dict):
+                for key in ("epic_id", "task_id", "id"):
+                    value = nested_context.get(key)
+                    if isinstance(value, str) and value.strip():
+                        return value.strip()
+        elif isinstance(output, str):
+            # Look for explicit epic ID mentions
+            match = re.search(r'epic[_\s-]?id[:\s]+([A-Za-z0-9_-]+)', output, re.IGNORECASE)
+            if match:
+                return match.group(1).strip()
+            
+            # Look for the folder naming convention produced by 00-start
+            path_match = re.search(r'\.taskmaster/epics/([0-9]+)_', output)
+            if path_match:
+                return path_match.group(1)
+        
+        return None
     
     def get_pipeline_status(self) -> Dict[str, Any]:
         """Get current pipeline status."""
