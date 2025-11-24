@@ -27,6 +27,7 @@ You do **not** implement new code here — you finalize, preserve knowledge, and
    - Verify final compliance with Laravel standards and performance expectations.
 
 2. **Git Commit**
+   - Stage all changes with `git add .`
    - Create a commit with the implemented changes.
    - Use a simple, descriptive title that summarizes the task.
    - Include in the commit body:
