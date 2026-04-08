@@ -9,6 +9,12 @@ mcp-servers:
     tools: ["*"]
     headers:
       Authorization: "Bearer $DEEPWIKI_KEY"
+  context7:
+    command: npx
+    args: ["@context7/mcp-server"]
+    tools: ["*"]
+    env:
+      CONTEXT7_API_KEY: $CONTEXT7_KEY
   github:
     type: sse
     url: https://mcp.github.com/sse
