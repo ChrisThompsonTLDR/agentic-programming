@@ -2,6 +2,23 @@
 
 A custom GitHub Copilot Cloud Agent that researches Laravel packages and generates Obsidian-style research notes.
 
+## Setup
+
+Before using the agent, complete these two steps:
+
+### 1. Add Secrets
+
+Go to **Repo Settings > Secrets and variables > Copilot env** and add:
+
+- `DEEPWIKI_KEY` — API key from [DeepWiki](https://api.deepwiki.com)
+- `CONTEXT7_KEY` — API key from [Context7](https://context7.com)
+
+### 2. Enable Memory
+
+Go to **Repo Settings > Copilot > Memory** and enable it so the agent learns from past runs.
+
+---
+
 ## Usage
 
 In Copilot Chat (GitHub.com, VS Code, or JetBrains), select the `laravel-package` agent and prompt:
