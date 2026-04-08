@@ -28,4 +28,4 @@ tags: [copilot, skills]
 
 ## Resources
 
-- [GitHub]((github_url))
+- [GitHub](github_url)

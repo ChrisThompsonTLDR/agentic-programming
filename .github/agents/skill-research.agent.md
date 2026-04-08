@@ -6,6 +6,8 @@ mcpServers:
   deepwiki:
     type: sse
     url: https://api.deepwiki.com/sse
+    headers:
+      Authorization: "Bearer $DEEPWIKI_KEY"
   github:
     type: sse
     url: https://mcp.github.com/sse

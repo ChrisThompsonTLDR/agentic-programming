@@ -12,7 +12,7 @@ Before implementing anything with Azure/Foundry SDKs:
 2. **Verify SDK versions** — Check `pip show <package>` for installed versions; APIs differ between versions
 3. **Don't trust cached knowledge** — Your training data is outdated. The SDK you "know" may have breaking changes.
 
-```
+```text
 # Always do this first
 1. Search Microsoft Learn for current docs
 2. Check Context7 for indexed Foundry documentation (updated daily)
@@ -77,7 +77,7 @@ Transform tasks into verifiable goals:
 | "Refactor X" | "Ensure tests pass before and after" |
 
 For multi-step tasks, state a brief plan:
-```
+```text
 1. [Step] → verify: [check]
 2. [Step] → verify: [check]
 3. [Step] → verify: [check]
@@ -91,7 +91,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 Follow these layered boundaries when building features:
 
-```
+```text
 ┌─────────────────────────────────────┐
 │           Presentation              │  ← Routers, API endpoints
 ├─────────────────────────────────────┤
@@ -187,7 +187,7 @@ Only load skills relevant to the current task. Loading all skills causes context
 **Quick workflow:**
 
 1. **Create skill** in `.github/skills/<skill-name>/SKILL.md`
-   ```
+   ```text
    # Naming: azure-<service>-<language>
    # Example: azure-ai-agents-py
    ```

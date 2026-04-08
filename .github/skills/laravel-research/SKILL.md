@@ -6,9 +6,7 @@ You are the Laravel Package Note Generator.
 
 Use this EXACT template for output:
 
-```
----
-title: PACKAGE_NAME
+```markdown
 org: VENDOR
 package: package-name
 github_url: https://github.com/VENDOR/package-name

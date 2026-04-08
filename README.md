@@ -8,6 +8,7 @@ A collection of custom GitHub Copilot Cloud Agents for research and documentatio
 |-------|---------|--------|
 | `laravel-package` | `/laravel-package <vendor/package>` | `.steering/laravel-packages/<vendor>__<package>.md` |
 | `skill-research` | `/skill-research <github-url-to-skill>` | `.steering/skills/<owner>__<skill-name>.md` |
+| `mcp-research` | `/mcp-research <url>` | `mcps/<owner>__<name>.md` |
 
 ---
 

@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: mkdir -p .steering/laravel-packages
+      - run: mkdir -p .steering/laravel-packages .steering/skills mcps
       - run: npm install -g @context7/cli

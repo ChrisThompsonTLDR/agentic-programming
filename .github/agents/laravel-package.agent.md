@@ -6,6 +6,8 @@ mcpServers:
   deepwiki:
     type: sse
     url: https://api.deepwiki.com/sse
+    headers:
+      Authorization: "Bearer $DEEPWIKI_KEY"
   context7:
     command: npx
     args: ["@context7/mcp-server"]

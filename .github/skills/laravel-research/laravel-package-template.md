@@ -12,17 +12,23 @@ release_date:
 laravel_news_url: 
 downloads_30d: 
 stars: 
-tags: [laravel, packages]
+tags: [laravel, packages, FEATURE1, FEATURE2]
 ---
 
 # PACKAGE_NAME
 
+<img>
+
+**DESCRIPTION**
+
 ## Key Features
+- FEATURE1
+- FEATURE2
 
 ## Installation
 
 ## Usage
 
 ## Resources
-- [GitHub]((github_url))
+- [GitHub](github_url)
 - [[Laravel Packages]]

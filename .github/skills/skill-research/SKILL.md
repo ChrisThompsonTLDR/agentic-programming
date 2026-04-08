@@ -58,7 +58,7 @@ EXAMPLE_PROMPT
 
 ## Resources
 
-- [GitHub]((github_url))
+- [GitHub](github_url)
 - [Parent Repo README](https://github.com/OWNER/REPO#readme)
 ```
 
