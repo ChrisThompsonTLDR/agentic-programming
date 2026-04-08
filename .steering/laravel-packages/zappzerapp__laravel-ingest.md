@@ -52,6 +52,7 @@ Define an importer class implementing `IngestDefinition`:
 ```php
 namespace App\Ingest;
 
+use App\Models\Role;
 use App\Models\User;
 use LaravelIngest\Contracts\IngestDefinition;
 use LaravelIngest\IngestConfig;
