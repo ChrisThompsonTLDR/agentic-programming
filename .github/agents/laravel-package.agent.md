@@ -1,8 +1,8 @@
 ---
 name: laravel-package
 description: Researches Laravel packages and generates Obsidian notes. Usage: /laravel-package <vendor/package>
-tools: ["read", "search", "edit", "write"]
-mcpServers:
+tools: ["read", "search", "edit"]
+mcp-servers:
   deepwiki:
     type: sse
     url: https://api.deepwiki.com/sse

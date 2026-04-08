@@ -1,8 +1,8 @@
 ---
 name: mcp-research
 description: Researches a Model Context Protocol (MCP) server from a URL and generates a structured research note. Usage: /mcp-research <url>
-tools: ["read", "search", "edit", "write"]
-mcpServers:
+tools: ["read", "search", "edit"]
+mcp-servers:
   deepwiki:
     type: sse
     url: https://api.deepwiki.com/sse
