@@ -113,13 +113,16 @@ Enable in **Repo Settings > Copilot > Memory** so the agent learns from past run
 │       ├── SKILL.md                   # Skill note generator skill
 │       └── skill-template.md          # Blank template reference
 └── workflows/
-    └── copilot-setup-steps.yml        # Environment setup
+    └── sync-skill-template.yml        # Copies templates/skill.md → skill-research/skill-template.md
 
 .steering/
 ├── laravel-packages/                  # Laravel package research notes
 │   └── <vendor>__<package>.md
 └── skills/                            # Copilot skill research notes
     └── <owner>__<skill-name>.md
+
+mcps/                                  # MCP server research notes
+└── <owner>__<name>.md
 ```
 
 ---

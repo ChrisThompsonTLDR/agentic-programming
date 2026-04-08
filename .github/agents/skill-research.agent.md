@@ -29,7 +29,7 @@ You are a GitHub Copilot skill researcher. For `/skill-research <github-url>`:
 
 ## Repo template (required)
 
-Before researching the remote skill, **read `templates/skill.md`** in this workspace. That file is the canonical reference for Copilot/agent skill packaging (frontmatter fields, `SKILL.md` structure, optional `scripts/`, `references/`, `assets/`, validation, and spec links). Use its vocabulary and rules when you interpret the upstream skill and when you write the research note.
+Before researching the remote skill, **read `.github/skills/skill-research/skill-template.md`** in this workspace. It matches `templates/skill.md` (GitHub Actions copies the latter into the skill folder). Use its vocabulary and rules when you interpret the upstream skill and when you write the research note.
 
 ## Steps
 
@@ -44,7 +44,7 @@ Before researching the remote skill, **read `templates/skill.md`** in this works
    - Read the parent repo's README for context on the skill ecosystem.
    - Search for any `.agent.md` or workflow files that reference this skill.
    - Use DeepWiki to get a deep summary of the repository if available.
-3. Generate the research note **using the structure implied by `templates/skill.md`**, at minimum:
+3. Generate the research note **using the structure implied by `skill-template.md`**, at minimum:
    - **Frontmatter vs spec** — Map the upstream `SKILL.md` YAML to the template’s fields (`name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`). Note gaps, invalid `name` patterns, or missing required fields per the template.
    - **Skill instructions** — Concise summary of what the upstream body tells an agent to do; call out steps, examples, and edge cases if present.
    - **Directory structure** — What exists on disk vs the template’s recommended layout (`scripts/`, `references/`, `assets/`, etc.).

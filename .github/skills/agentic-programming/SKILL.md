@@ -46,5 +46,6 @@ Output is written to `.steering/laravel-packages/<vendor>__<package>.md`.
 | `.github/agents/laravel-package.agent.md` | Agent profile and MCP server config |
 | `.github/skills/laravel-research/SKILL.md` | Note-generator skill with package template |
 | `.github/skills/laravel-research/laravel-package-template.md` | Blank template reference |
-| `.github/workflows/copilot-setup-steps.yml` | Environment setup workflow |
 | `.steering/laravel-packages/` | Output directory for generated notes |
+| `.steering/skills/` | Output directory for skill research notes |
+| `mcps/` | Output directory for MCP server research notes |

@@ -2,64 +2,23 @@
 name: skill-research
 description: Generates structured research notes about a GitHub Copilot skill from a GitHub URL. Use for skill discovery and documentation.
 ---
+
 You are the Copilot Skill Note Generator.
 
-Use this EXACT template for output:
+## Canonical packaging spec
 
-```
----
-title: SKILL_NAME
-owner: OWNER
-repo: REPO
-skill_name: skill-name
-github_url: https://github.com/OWNER/REPO/tree/main/.github/skills/skill-name
-skill_md_url: https://github.com/OWNER/REPO/blob/main/.github/skills/skill-name/SKILL.md
-description: ONE_LINE_DESCRIPTION
-tags: [copilot, skills, TOPIC1, TOPIC2]
----
+Before you interpret an upstream skill or structure a research note, **read [`skill-template.md`](skill-template.md)** in this skill directory. It is the full spec reference (frontmatter fields, `SKILL.md` layout, `references/` / `scripts/` / `assets/`, validation, progressive disclosure).
 
-# SKILL_NAME
+That file is a **copy of** `templates/skill.md` at the repo root. GitHub Actions updates `skill-template.md` whenever `templates/skill.md` changes; edit the source in `templates/skill.md` if you need to change the spec text.
 
-**DESCRIPTION**
+## Research note
 
-## What This Skill Does
+Write to `.steering/skills/<owner>__<skill-name>.md`. Cover at minimum:
 
-SUMMARY_OF_SKILL_PURPOSE_AND_BEHAVIOUR
+1. **Frontmatter vs spec** — Map the upstream `SKILL.md` YAML to the template fields (`name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`). Note gaps, invalid `name` patterns, or missing required fields.
+2. **Skill instructions** — Summary of what the upstream body tells an agent to do; steps, examples, and edge cases if present.
+3. **Directory structure** — What exists on disk vs the template layout (`scripts/`, `references/`, `assets/`, etc.).
+4. **Validation & spec** — Whether `skills-ref validate` or agentskills.io spec items apply; follow-ups for the maintainer.
+5. **Sources** — GitHub URLs and paths you relied on (repo, skill dir, `SKILL.md`, related agents/workflows).
 
-## Capabilities
-
-- CAPABILITY_1
-- CAPABILITY_2
-
-## Key Files
-
-| File | Purpose |
-|------|---------|
-| `SKILL.md` | DESCRIPTION |
-| `FILE2` | DESCRIPTION |
-
-## Configuration
-
-Any environment variables, secrets, or MCP servers the skill requires:
-
-- `ENV_VAR` — PURPOSE
-
-## Example Usage
-
-How an agent or user invokes this skill:
-
-```
-EXAMPLE_PROMPT
-```
-
-## Agents / Workflows Using This Skill
-
-- AGENT_OR_WORKFLOW (link if available)
-
-## Resources
-
-- [GitHub](github_url)
-- [Parent Repo README](https://github.com/OWNER/REPO#readme)
-```
-
-Fill all placeholders from research. Write to `.steering/skills/<owner>__<skill-name>.md`.
+Populate only fields you can verify; leave unknowns blank rather than guessing.
