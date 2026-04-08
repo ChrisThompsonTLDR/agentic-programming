@@ -1,6 +1,6 @@
 ---
 name: laravel-package
-description: Researches Laravel packages and generates Obsidian notes. Usage: /laravel-package <vendor/package>
+description: "Researches Laravel packages and generates Obsidian notes. Usage: /laravel-package <vendor/package>"
 tools: ["read", "search", "edit"]
 mcp-servers:
   deepwiki:

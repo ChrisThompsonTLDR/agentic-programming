@@ -1,6 +1,6 @@
 ---
 name: skill-research
-description: Researches a GitHub Copilot skill from a GitHub URL and generates a structured research note. Usage: /skill-research <github-url-to-skill-directory>
+description: "Researches a GitHub Copilot skill from a GitHub URL and generates a structured research note. Usage: /skill-research <github-url-to-skill-directory>"
 tools: ["read", "search", "edit"]
 mcp-servers:
   deepwiki:
