@@ -1,7 +1,7 @@
 ---
 name: laravel-package
 description: "Researches Laravel packages and generates Obsidian notes. Usage: /laravel-package <vendor/package>"
-tools: ["read", "search", "edit"]
+tools: ["read", "search", "edit", "browser"]
 mcp-servers:
   deepwiki:
     type: sse
