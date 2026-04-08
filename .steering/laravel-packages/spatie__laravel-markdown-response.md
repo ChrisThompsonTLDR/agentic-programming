@@ -7,12 +7,12 @@ docs_url: https://spatie.be/docs/laravel-markdown-response/v1/introduction
 composer_require: composer require spatie/laravel-markdown-response
 author: Freek Van der Herten
 announce_date: 2025-04-07
-latest_release: 
-release_date: 
+latest_release: v1.1.0 (2026-02-22)
+release_date: 2026-02-22
 laravel_news_url: https://laravel-news.com/serve-markdown-versions-of-your-laravel-pages-to-ai-agents
 downloads_30d: 
-stars: 
-tags: [laravel, packages, markdown, ai-agents, llm, response, content-negotiation, llms-txt]
+stars: 67
+tags: [laravel, packages, markdown, ai, ai-agents, llm, response, content-negotiation, llms-txt]
 ---
 
 # laravel-markdown-response
