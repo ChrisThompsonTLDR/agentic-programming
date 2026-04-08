@@ -6,11 +6,13 @@ mcp-servers:
   deepwiki:
     type: sse
     url: https://api.deepwiki.com/sse
+    tools: ["*"]
     headers:
       Authorization: "Bearer $DEEPWIKI_KEY"
   github:
     type: sse
     url: https://mcp.github.com/sse
+    tools: ["*"]
 ---
 
 You are a GitHub Copilot skill researcher. For `/skill-research <github-url>`:

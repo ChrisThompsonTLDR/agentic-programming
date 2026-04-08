@@ -6,11 +6,13 @@ mcp-servers:
   deepwiki:
     type: sse
     url: https://api.deepwiki.com/sse
+    tools: ["*"]
     headers:
       Authorization: "Bearer $DEEPWIKI_KEY"
   github:
     type: sse
     url: https://mcp.github.com/sse
+    tools: ["*"]
 ---
 
 You are an MCP (Model Context Protocol) server researcher. For `/mcp-research <url>`:
