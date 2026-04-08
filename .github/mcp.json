@@ -5,15 +5,6 @@
             "tools": ["*"],
             "url": "https://mcp.context7.com/mcp"
         },
-        "laravel-boost": {
-            "type": "local",
-            "tools": ["*"],
-            "command": "php",
-            "args": [
-                "artisan",
-                "boost:mcp"
-            ]
-        },
         "deepwiki": {
             "type": "http",
             "tools": ["*"],
