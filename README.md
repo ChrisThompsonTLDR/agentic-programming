@@ -1,3 +1,16 @@
+# Agentic Programming
+
+A collection of custom GitHub Copilot Cloud Agents for research and documentation.
+
+## Agents
+
+| Agent | Trigger | Output |
+|-------|---------|--------|
+| `laravel-package` | `/laravel-package <vendor/package>` | `.steering/laravel-packages/<vendor>__<package>.md` |
+| `skill-research` | `/skill-research <github-url-to-skill>` | `.steering/skills/<owner>__<skill-name>.md` |
+
+---
+
 # Laravel Package Research Agent
 
 A custom GitHub Copilot Cloud Agent that researches Laravel packages and generates Obsidian-style research notes.
@@ -89,15 +102,52 @@ Enable in **Repo Settings > Copilot > Memory** so the agent learns from past run
 ```
 .github/
 ├── agents/
-│   └── laravel-package.agent.md       # Agent profile
+│   ├── laravel-package.agent.md       # Laravel package agent
+│   └── skill-research.agent.md        # Skill research agent
 ├── skills/
-│   └── laravel-research/
-│       ├── SKILL.md                   # Note generator skill
-│       └── laravel-package-template.md  # Blank template reference
+│   ├── laravel-research/
+│   │   ├── SKILL.md                   # Note generator skill
+│   │   └── laravel-package-template.md  # Blank template reference
+│   └── skill-research/
+│       ├── SKILL.md                   # Skill note generator skill
+│       └── skill-template.md          # Blank template reference
 └── workflows/
     └── copilot-setup-steps.yml        # Environment setup
 
 .steering/
-└── laravel-packages/                  # Generated research notes
-    └── <vendor>__<package>.md
+├── laravel-packages/                  # Laravel package research notes
+│   └── <vendor>__<package>.md
+└── skills/                            # Copilot skill research notes
+    └── <owner>__<skill-name>.md
 ```
+
+---
+
+## Skill Research Agent
+
+A custom GitHub Copilot Cloud Agent that researches GitHub Copilot skills and generates structured research notes.
+
+### Usage
+
+In Copilot Chat (GitHub.com, VS Code, or JetBrains), select the `skill-research` agent and prompt:
+
+```
+/skill-research https://github.com/microsoft/skills/blob/main/.github/skills/copilot-sdk
+```
+
+The agent will research the skill and write a note to:
+
+```
+.steering/skills/microsoft__copilot-sdk.md
+```
+
+### How It Works
+
+1. Parses the GitHub URL to extract `owner`, `repo`, `path`, and `skill-name`.
+2. Researches via GitHub MCP and DeepWiki:
+   - Reads `SKILL.md` for description and capabilities.
+   - Lists all files in the skill directory.
+   - Searches for agents/workflows that use the skill.
+   - Reads the parent repo README for ecosystem context.
+3. Generates a structured note using the skill template.
+4. Writes the note to `.steering/skills/<owner>__<skill-name>.md`.
