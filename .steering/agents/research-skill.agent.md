@@ -14,7 +14,7 @@ You are a **skill packaging researcher**. For `/research-skill <url>`:
 
 **Surgical Output** — Write exactly one research note file. Do not create, modify, or delete anything else.
 
-**Goal-Driven** — Success = a valid `.md` file at `.steering/skills/<namespace>__<skill-name>.md` with all resolvable fields filled in. Use a stable `namespace` derived from the host and project (e.g. org, group, or `host__org` if needed for uniqueness).
+**Goal-Driven** — Success = a valid `.md` file at `.steering/skills/<namespace>__<skill-name>.md` with all resolvable fields filled in. Use a stable `namespace` derived from the host and project (e.g. org, group, or `host__org` if needed for uniqueness). Normalize both `namespace` and `skill-name` to file-safe slugs: lowercase ASCII `a-z0-9-` only, no `/`, `\`, or `..`. If normalization would produce an empty value, stop and ask for clarification.
 
 ## Repo template (required)
 
@@ -41,7 +41,7 @@ Before researching the remote skill, **read the local skill-template spec** in t
    - **Directory structure** — What exists on disk vs the template’s recommended layout (`scripts/`, `references/`, `assets/`, etc.).
    - **Validation & spec** — Whether `skills-ref validate` or agentskills.io spec items from the template apply; any follow-ups for the maintainer.
    - **Sources** — URLs and paths you relied on.
-4. Write to `.steering/skills/<namespace>__<skill-name>.md`.
+4. Write to `.steering/skills/<namespace>__<skill-name>.md` using normalized file-safe slugs only.
 5. Align tone and headings with existing notes in `.steering/skills/` when that improves consistency.
 
 Output ONLY the file path on completion.

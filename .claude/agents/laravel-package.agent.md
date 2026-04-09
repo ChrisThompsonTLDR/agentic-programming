@@ -30,7 +30,7 @@ Resolve every frontmatter field before writing the file. Use these sources:
 
 | Field | Source |
 |-------|--------|
-| `author` | Packagist (`packagist.org/packages/<vendor>/<package>.json` → `authors[0].name`) |
+| `author` | Packagist (`packagist.org/packages/<vendor>/<package>.json` → `package.maintainers[0].name`, or fall back to `package.authors[0].name`; do not rely on the `versions.dev-master` key as it may be absent) |
 | `stars` | GitHub MCP → `stargazers_count` |
 | `latest_release` | GitHub MCP `get_latest_release` → format as `vX.Y.Z (YYYY-MM-DD)` |
 | `release_date` | GitHub MCP `get_latest_release` → `published_at` date (YYYY-MM-DD) |

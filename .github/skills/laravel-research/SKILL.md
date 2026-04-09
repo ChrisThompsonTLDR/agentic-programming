@@ -6,7 +6,7 @@ You are the Laravel Package Note Generator.
 
 Use this EXACT template for output:
 
-```markdown
+````markdown
 ---
 org: VENDOR
 package: package-name
@@ -43,7 +43,7 @@ CODE_EXAMPLE
 
 ## Resources
 - [[Laravel Packages]] (related)
-```
+````
 
 ## Field Resolution Rules
 
@@ -51,7 +51,7 @@ Resolve every frontmatter field before writing. Use these sources:
 
 | Field | Source |
 |-------|--------|
-| `author` | Packagist JSON (`packagist.org/packages/<v>/<p>.json`) → `versions.dev-master.authors[0].name` |
+| `author` | Packagist JSON (`packagist.org/packages/<v>/<p>.json`) → `package.maintainers[0].name`, or fall back to `package.authors[0].name`; do not rely on the `versions.dev-master` key as it may be absent |
 | `stars` | GitHub MCP `search_repositories` or `get_repository` → `stargazers_count` |
 | `latest_release` | GitHub MCP `get_latest_release` → format `vX.Y.Z (YYYY-MM-DD)` |
 | `release_date` | GitHub MCP `get_latest_release` → `published_at` (YYYY-MM-DD) |

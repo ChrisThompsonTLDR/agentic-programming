@@ -7,7 +7,7 @@
                 "perplexity-mcp"
             ],
             "env": {
-                "PERPLEXITY_API_KEY": ""
+                "PERPLEXITY_API_KEY": "${PERPLEXITY_API_KEY}"
             }
         },
         "deepwiki": {
@@ -16,7 +16,7 @@
         "github": {
             "url": "https://api.githubcopilot.com/mcp/",
             "headers": {
-                "Authorization": "Bearer YOUR_GITHUB_PAT"
+                "Authorization": "Bearer ${GITHUB_PAT}"
             }
         }
     }

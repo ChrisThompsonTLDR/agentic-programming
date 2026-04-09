@@ -21,7 +21,7 @@ tags: [laravel, packages, livewire, ui, tailwind, components, blade, flux-pro]
 
 Flux by [Caleb Porzio](https://github.com/calebporzio) and the Livewire team ships Blade/Livewire primitives (buttons, inputs, modals, tables, charts, date pickers, and more) with docs and demos at [fluxui.dev](https://fluxui.dev/). [Flux 2.0](https://fluxui.dev/blog/2025-02-19-flux-2-is-here) added built-in date/calendar and chart components with a small JS footprint; see the [Laravel News overview](https://laravel-news.com/flux-2-livewire-ui-kit).
 
-**Flux Pro:** Advanced components and themes are licensed separately. Purchase and install via [Flux pricing](https://fluxui.dev/pricing); activate with `php artisan flux:activate` (Composer auth against `composer.fluxui.dev`). **In this org, projects typically already have Pro installed**—assume Pro is available when scaffolding UIs unless a repo explicitly omits it.
+**Flux Pro:** Advanced components and themes are licensed separately. Purchase and install via [Flux pricing](https://fluxui.dev/pricing); activate with `php artisan flux:activate` (Composer auth against `composer.fluxui.dev`). For generated scaffolds, assume OSS-only by default and use Pro components only when the target repo explicitly confirms Pro licensing/setup.
 
 ## Key Features
 - Tailwind CSS v4.2+ styling with optional theming and dark mode via `@fluxAppearance`

@@ -83,7 +83,9 @@ Include `convert-svg.sh` script; instructions reference it.
 
 ## Research note
 
-Write to `.steering/skills/<namespace>__<skill-name>.md`. Use a stable `namespace` from the source (org, group, or disambiguated host+project). Cover at minimum:
+Write to `.steering/skills/<namespace>__<skill-name>.md`. Use a stable `namespace` from the source (org, group, or disambiguated host+project).
+Normalize both `namespace` and `skill-name` to file-safe slugs: lowercase ASCII `a-z0-9-` only, no `/`, `\`, or `..`.
+If normalization would produce an empty value, stop and ask for clarification. Cover at minimum:
 
 1. **Frontmatter vs spec** — Map the upstream `SKILL.md` YAML to the template fields (`name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`). Note gaps, invalid `name` patterns, or missing required fields.
 2. **Skill instructions** — Summary of what the upstream body tells an agent to do; steps, examples, and edge cases if present.

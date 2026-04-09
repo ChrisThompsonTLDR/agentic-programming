@@ -29,9 +29,10 @@ jobs:
 
       - name: Fail if mirrors differ from commit
         run: |
-          if git diff --exit-code; then
+          if [ -z "$(git status --porcelain --untracked-files=all)" ]; then
             echo "IDE mirrors match .steering"
           else
             echo "::error::Out of sync with .steering — update mirrors under .cursor, .claude, and .github to match .steering (see .steering/README.md), then commit together."
+            git status --short
             exit 1
           fi

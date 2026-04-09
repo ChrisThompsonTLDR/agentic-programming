@@ -22,6 +22,7 @@ You are an MCP (Model Context Protocol) server researcher. For `/research-mcp <u
    - `owner` — GitHub org/user or publisher (e.g., `modelcontextprotocol`)
    - `name` — repository or package name (e.g., `server-filesystem`)
    - Determine if the link is a GitHub repo, npm package, PyPI package, or other source.
+   - Normalize `owner` and `name` to file-safe slugs: lowercase ASCII `a-z0-9-` only; reject `/`, `\`, and `..`. If either slug is empty after normalization, stop and ask for clarification.
 
 2. Research — fetch fresh data, do not rely on cached knowledge:
    - **GitHub repo** (via GitHub MCP + DeepWiki):
@@ -34,7 +35,7 @@ You are an MCP (Model Context Protocol) server researcher. For `/research-mcp <u
 
 3. Generate a research note using the structure below.
 
-4. Write to `.steering/mcps/<owner>__<name>.md`.
+4. Write to `.steering/mcps/<owner>__<name>.md` using the normalized slugs only.
 
 5. Leverage repo Memories for consistent formatting patterns.
 

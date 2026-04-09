@@ -36,6 +36,12 @@ def strip_copilot_frontmatter(content: str) -> str:
         line = lines[i]
         if line.startswith("tools:"):
             i += 1
+            while i < len(lines):
+                L = lines[i]
+                if L.strip() == "" or L.startswith(" ") or L.startswith("\t"):
+                    i += 1
+                    continue
+                break
             continue
         if line.startswith("mcp-servers:"):
             i += 1
@@ -107,9 +113,14 @@ def resolve_one_embed(root: Path, path_part: str, section: str | None) -> str:
     if not p or Path(p).name == "":
         return "<!-- invalid embed path -->\n"
     rel = Path(p)
+    if rel.is_absolute() or ".." in rel.parts:
+        return "<!-- invalid embed path -->\n"
     if rel.suffix != ".md":
         rel = rel.with_suffix(".md")
-    tpl = root / ".steering" / rel
+    tpl = (root / ".steering" / rel).resolve()
+    steering_root = (root / ".steering").resolve()
+    if not tpl.is_relative_to(steering_root):
+        return "<!-- invalid embed path -->\n"
     if not tpl.is_file():
         return "<!-- missing: .steering/" + rel.as_posix() + " -->\n"
     raw = tpl.read_text(encoding="utf-8")
@@ -193,9 +204,11 @@ def main() -> None:
     (root / ".cursor" / "agents").mkdir(parents=True, exist_ok=True)
     (root / ".claude" / "agents").mkdir(parents=True, exist_ok=True)
 
+    expected_agent_files: set[str] = set()
     for f in sorted(agents_dir.iterdir()):
         if not f.is_file() or f.name == "README.md":
             continue
+        expected_agent_files.add(f.name)
         raw = f.read_text(encoding="utf-8")
         if f.name == "research-skill.agent.md":
             built_gh_claude = strip_github_copilot_embeds_doc(
@@ -222,7 +235,16 @@ def main() -> None:
             (root / ".cursor" / "agents" / f.name).write_text(stripped, encoding="utf-8")
             (root / ".claude" / "agents" / f.name).write_text(stripped, encoding="utf-8")
 
+    # Prune stale agent mirrors
+    for folder in (".github", ".cursor", ".claude"):
+        ad = root / folder / "agents"
+        if ad.is_dir():
+            for stale in sorted(ad.iterdir()):
+                if stale.is_file() and stale.name.endswith(".md") and stale.name not in expected_agent_files:
+                    stale.unlink()
+
     skills_root = root / ".steering" / "skills"
+    expected_skill_names: set[str] = set()
     for skill_dir in sorted(skills_root.iterdir()):
         if not skill_dir.is_dir():
             continue
@@ -230,6 +252,7 @@ def main() -> None:
         if not sk.is_file():
             continue
         name = skill_dir.name
+        expected_skill_names.add(name)
         raw_skill = sk.read_text(encoding="utf-8")
         for folder in ("cursor", "claude", "github"):
             dest = root / f".{folder}" / "skills" / name
@@ -246,6 +269,19 @@ def main() -> None:
             else:
                 out = process_markdown_doc(root, raw_skill, ("templates",))
             (dest / "SKILL.md").write_text(out, encoding="utf-8")
+
+    # Prune stale skill mirrors (but keep special non-steering directories)
+    special_skill_dirs = {"skill-research", "skill-template", "agentic-programming"}
+    for folder in ("cursor", "claude", "github"):
+        sd = root / f".{folder}" / "skills"
+        if sd.is_dir():
+            for stale_dir in sorted(sd.iterdir()):
+                if stale_dir.is_dir() and stale_dir.name not in expected_skill_names and stale_dir.name not in special_skill_dirs:
+                    skill_md = stale_dir / "SKILL.md"
+                    if skill_md.is_file():
+                        skill_md.unlink()
+                    if not any(stale_dir.iterdir()):
+                        stale_dir.rmdir()
 
     for sub in (
         root / ".github" / "skills" / "skill-research",
