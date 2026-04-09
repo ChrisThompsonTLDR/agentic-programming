@@ -3,7 +3,7 @@ title: Extending Copilot Cloud Agent with MCP
 url: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/extend-cloud-agent-with-mcp
 status: Public Preview
 tags: [copilot, mcp, agents, cloud-agent]
-related: [[Github Copilot/Agents]], [[Github Copilot/Skills]]
+related: [[github-copilot/Agents]], [[github-copilot/Skills]]
 ---
 
 # Extending GitHub Copilot Cloud Agent with Model Context Protocol (MCP)
@@ -120,4 +120,4 @@ Similar command/env setups; see docs for auth (OIDC/API tokens).
 
 ## Resources
 - [Docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/extend-cloud-agent-with-mcp)
-- Related: [[Github Copilot/Agents]], [[Github Copilot/Skills]], [[Github Copilot/Memories]]
+- Related: [[github-copilot/Agents]], [[github-copilot/Skills]], [[github-copilot/Memories]]

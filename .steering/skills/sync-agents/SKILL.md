@@ -17,7 +17,7 @@ metadata:
 
 ## Replication rules
 
-1. **Build** — In each agent file’s **body** (after opening YAML), expand **`![[templates/...]]`** by default. For **`research-skill.agent.md`**, also expand **`![[github-copilot/...]]`** only in the **`.cursor/agents/`** output; **`.github`** / **`.claude`** replace those embeds with a pointer to **`.steering/github-copilot/Skills.md`**. With `#Heading`, inline the `## Heading` section only. Leave other `![[...]]` as-is.
+1. **Build** — In each agent file’s **body** (after opening YAML), expand **`![[path]]`** embed links for **`templates/`** paths by default. For **`research-skill.agent.md`**, also expand **`![[github-copilot/...]]`** embeds only in the **`.cursor/agents/`** output; **`.github`** / **`.claude`** replace those embeds with a pointer to **`.steering/github-copilot/Skills.md`**. With `#Heading`, inline the `## Heading` section only. Leave other `![[...]]` as-is.
 
 2. **`.github/agents/`** — Write the **built** markdown (same basename).
 

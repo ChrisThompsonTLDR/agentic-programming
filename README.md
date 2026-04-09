@@ -14,6 +14,7 @@ See **`.steering/README.md`** for layout details.
 
 | Agent | Trigger | Output |
 |-------|---------|--------|
+| `idea` | `/idea <free-text idea or path to scratch file>` | `.steering/ideas/<slug>.md` |
 | `laravel-package` | `/laravel-package <vendor/package>` | `.steering/laravel-packages/<vendor>__<package>.md` |
 | `research-skill` | `/research-skill <url-to-skill-directory>` | `.steering/skills/<namespace>__<skill-name>.md` |
 | `research-mcp` | `/research-mcp <url>` | `.steering/mcps/<owner>__<name>.md` |

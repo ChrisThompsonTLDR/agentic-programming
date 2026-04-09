@@ -9,8 +9,8 @@ tags:
   - skills
   - customization
 related:
- - [["GitHub Copilot/Agents"]]
- - [["GitHub Copilot/Memories"]]
+  - "[[github-copilot/Agents]]"
+  - "[[github-copilot/Memories]]"
 ---
 
 # Copilot Agent Skills

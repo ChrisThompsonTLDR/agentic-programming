@@ -9,6 +9,7 @@ author:
 latest_release: 
 release_date: 
 packagist_url: 
+downloads_30d: 
 stars: 
 forks: 
 tags: [laravel, packages]

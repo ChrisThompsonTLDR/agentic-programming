@@ -5,9 +5,9 @@ feature_status: Public Preview
 who_can_use: Repository administrators, Org/Enterprise owners
 tags: [copilot, mcp, settings, cloud-agent, agents]
 related: 
-  - [[Github Copilot/Agents]]
-  - [[Github Copilot/Skills]]
-  - [[Github Copilot/Agent MCP]]
+  - [[github-copilot/Agents]]
+  - [[github-copilot/Skills]]
+  - [[github-copilot/Agent MCP]]
 ---
 
 # Copilot Settings: Extending Cloud Agent with MCP
@@ -91,6 +91,6 @@ Adapt `.vscode/mcp.json`:
 ## Resources
 - [Full Docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/extend-cloud-agent-with-mcp)
 - [MCP Servers Repo](https://github.com/modelcontextprotocol/servers)
-- Related: [[Github Copilot/Agents]] (custom agents), [[Github Copilot/Skills]]
+- Related: [[github-copilot/Agents]] (custom agents), [[github-copilot/Skills]]
 
 Last updated: 2026-04-08

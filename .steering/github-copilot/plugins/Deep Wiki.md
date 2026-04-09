@@ -6,7 +6,7 @@ stars: 2000
 forks: 218
 latest_commit: 67ae723a23ba880e3e5c8a3e5e2320092024476e (2026-04-02: Move package field into metadata map)
 tags: [copilot-plugins, deep-wiki, documentation, vitepress, mermaid, agents, skills, onboarding]
-related: [[Github Copilot/Plugins]], [[Github Copilot/Skills]], [[Skills/Skill Creator]], [[Agent Sync]]
+related: [[github-copilot/Plugins]], [[github-copilot/Skills]], [[Skills/Skill Creator]], [[Agent Sync]]
 ---
 
 # Deep Wiki Plugin
@@ -116,7 +116,7 @@ Generates:
 ## Resources
 - [GitHub Repo](https://github.com/microsoft/skills/tree/main/.github/plugins/deep-wiki)
 - [Full README](https://github.com/microsoft/skills/blob/main/.github/plugins/deep-wiki/README.md)
-- [Copilot Plugins Guide]([[GitHub Copilot/Plugins]])
-- [Skills Guide]([[GitHub Copilot/Skills]])
+- [Copilot Plugins Guide]([[github-copilot/Plugins]])
+- [Skills Guide]([[github-copilot/Skills]])
 
 Last updated: 2026-04-08

@@ -4,9 +4,9 @@ url: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/c
 feature_status: GA
 tags: [copilot, agents, environment, github-actions, runners]
 related:
- - [[Github Copilot/Agents]]
- - [[Github Copilot/Agent MCP]]
- - [[Github Copilot/Skills]]
+ - [[github-copilot/Agents]]
+ - [[github-copilot/Agent MCP]]
+ - [[github-copilot/Skills]]
 ---
 
 # Customizing the Development Environment for GitHub Copilot Cloud Agent

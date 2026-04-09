@@ -4,7 +4,7 @@ url: https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/c
 feature_status: Public Preview
 who_can_use: Copilot Pro/Pro+/Business/Enterprise
 tags: [github-copilot, agents, custom-agents, cloud-agent, mcp]
-related: [[Github Copilot/Memories]]
+related: [[github-copilot/Memories]]
 ---
 
 # Copilot Custom Agents
