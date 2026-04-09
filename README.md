@@ -2,13 +2,21 @@
 
 A collection of custom GitHub Copilot Cloud Agents for research and documentation.
 
+## Source of truth: `.steering`
+
+**Agents** and **packaged skills** are authored under **`.steering/`** and mirrored into `.cursor`, `.claude`, and `.github` using the checklist in **`.steering/README.md`**.
+
+If you edit a file under `.cursor/` or `.github/`, merge those changes back into `.steering` and replicate out again. CI (**Verify steering sync**) fails when mirrors drift.
+
+See **`.steering/README.md`** for layout details.
+
 ## Agents
 
 | Agent | Trigger | Output |
 |-------|---------|--------|
 | `laravel-package` | `/laravel-package <vendor/package>` | `.steering/laravel-packages/<vendor>__<package>.md` |
-| `skill-research` | `/skill-research <github-url-to-skill>` | `.steering/skills/<owner>__<skill-name>.md` |
-| `mcp-research` | `/mcp-research <url>` | `mcps/<owner>__<name>.md` |
+| `research-skill` | `/research-skill <url-to-skill-directory>` | `.steering/skills/<namespace>__<skill-name>.md` |
+| `research-mcp` | `/research-mcp <url>` | `.steering/mcps/<owner>__<name>.md` |
 
 ---
 
@@ -98,60 +106,53 @@ Add to **Repo Settings > Secrets and variables > Copilot env**:
 
 Enable in **Repo Settings > Copilot > Memory** so the agent learns from past runs.
 
-## File Structure
+## File Structure (summary)
 
 ```
-.github/
-├── agents/
-│   ├── laravel-package.agent.md       # Laravel package agent
-│   └── skill-research.agent.md        # Skill research agent
-├── skills/
-│   ├── laravel-research/
-│   │   ├── SKILL.md                   # Note generator skill
-│   │   └── laravel-package-template.md  # Blank template reference
-│   └── skill-research/
-│       ├── SKILL.md                   # Skill note generator skill
-│       └── skill-template.md          # Blank template reference
-└── workflows/
-    └── sync-skill-template.yml        # Copies templates/skill.md → skill-research/skill-template.md
-
 .steering/
-├── laravel-packages/                  # Laravel package research notes
+├── README.md                          # Steering layout & sync rules
+├── agents/                            # Canonical agents → .cursor / .claude / .github
+├── skills/                            # Packaged skills (subdirs) + research notes (flat *.md)
+├── templates/                         # AGENTS.md, agent.md, skill.md (skill spec)
+├── laravel-packages/                  # Laravel research notes
 │   └── <vendor>__<package>.md
-└── skills/                            # Copilot skill research notes
-    └── <owner>__<skill-name>.md
+├── mcps/                              # MCP server research notes
+│   └── <owner>__<name>.md
+└── ...
 
-mcps/                                  # MCP server research notes
-└── <owner>__<name>.md
+.github/
+├── agents/                            # Mirrored from .steering/agents/
+├── skills/                            # Mirrored packaged skills + skill-research extras
+└── workflows/
+    └── verify-steering-sync.yml       # CI: script + git diff --exit-code
+
+.cursor/  .claude/                     # Mirrored agents & skills (see .steering/README.md)
 ```
 
 ---
 
 ## Skill Research Agent
 
-A custom GitHub Copilot Cloud Agent that researches GitHub Copilot skills and generates structured research notes.
+A custom GitHub Copilot Cloud Agent that researches **agent skills** published in git repositories (from a URL you provide) and writes structured research notes.
 
 ### Usage
 
-In Copilot Chat (GitHub.com, VS Code, or JetBrains), select the `skill-research` agent and prompt:
+In Copilot Chat (GitHub.com, VS Code, or JetBrains), select the `research-skill` agent and prompt with a URL to a skill directory in a git host (for example a repository folder view or equivalent):
 
 ```
-/skill-research https://github.com/microsoft/skills/blob/main/.github/skills/copilot-sdk
+/research-skill https://example.com/org/repo/tree/main/path/to/skill
 ```
 
-The agent will research the skill and write a note to:
+The agent will write a research note to:
 
 ```
-.steering/skills/microsoft__copilot-sdk.md
+.steering/skills/<namespace>__<skill-name>.md
 ```
 
 ### How It Works
 
-1. Parses the GitHub URL to extract `owner`, `repo`, `path`, and `skill-name`.
-2. Researches via GitHub MCP and DeepWiki:
-   - Reads `SKILL.md` for description and capabilities.
-   - Lists all files in the skill directory.
-   - Searches for agents/workflows that use the skill.
-   - Reads the parent repo README for ecosystem context.
-3. Generates a structured note using the skill template.
-4. Writes the note to `.steering/skills/<owner>__<skill-name>.md`.
+1. Parses the URL to identify host, repository coordinates, and path to the skill directory.
+2. Researches using live tools (repository access when available, plus DeepWiki, Context7, etc.).
+3. Reads the skill’s `SKILL.md` and related files.
+4. Generates a structured note using the repo’s skill template (see `.steering/templates/skill.md` and mirrored `skill-template` files).
+5. Writes the note under `.steering/skills/`.

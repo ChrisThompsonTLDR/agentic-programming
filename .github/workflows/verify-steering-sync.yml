@@ -1,0 +1,37 @@
+name: Verify steering sync
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".steering/**"
+      - ".github/workflows/verify-steering-sync.yml"
+      - "scripts/regenerate-ide-mirrors.py"
+      - ".github/agents/**"
+      - ".github/skills/**"
+      - ".cursor/agents/**"
+      - ".cursor/skills/**"
+      - ".claude/**"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate IDE mirrors from .steering
+        run: |
+          set -euo pipefail
+          python3 scripts/regenerate-ide-mirrors.py
+
+      - name: Fail if mirrors differ from commit
+        run: |
+          if git diff --exit-code; then
+            echo "IDE mirrors match .steering"
+          else
+            echo "::error::Out of sync with .steering — update mirrors under .cursor, .claude, and .github to match .steering (see .steering/README.md), then commit together."
+            exit 1
+          fi

@@ -1,0 +1,23 @@
+{
+    "mcpServers": {
+        "perplexity": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "perplexity-mcp"
+            ],
+            "env": {
+                "PERPLEXITY_API_KEY": ""
+            }
+        },
+        "deepwiki": {
+            "url": "https://mcp.deepwiki.com/mcp"
+        },
+        "github": {
+            "url": "https://api.githubcopilot.com/mcp/",
+            "headers": {
+                "Authorization": "Bearer YOUR_GITHUB_PAT"
+            }
+        }
+    }
+}

@@ -1,5 +1,3 @@
-Frontmatter
-```
 ---
 name:  # Required: 1-64 chars, lowercase a-z 0-9 -, no leading/trailing/consecutive hyphens. Matches folder name.
 description:  # Required: 1-1024 chars. Describe what the skill does and when to use it. Include keywords.
@@ -10,7 +8,6 @@ metadata:  # Optional: Arbitrary key-value pairs.
   version: "1.0"
 allowed-tools:  # Optional (experimental): Space-delimited pre-approved tools.
 ---
-```
 
 # Skill Instructions
 
