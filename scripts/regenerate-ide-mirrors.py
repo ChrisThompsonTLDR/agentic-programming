@@ -20,6 +20,10 @@ GITHUB_EMBED_POINTER = (
     "in this repository.\n\n"
 )
 
+# Skill directories under .github/.cursor/.claude/skills/ that are not
+# generated from .steering/skills/ and must be preserved by the pruning pass.
+SPECIAL_SKILL_DIRS = {"skill-research", "skill-template", "agentic-programming"}
+
 
 def strip_copilot_frontmatter(content: str) -> str:
     if not content.startswith("---"):
@@ -37,8 +41,8 @@ def strip_copilot_frontmatter(content: str) -> str:
         if line.startswith("tools:"):
             i += 1
             while i < len(lines):
-                L = lines[i]
-                if L.strip() == "" or L.startswith(" ") or L.startswith("\t"):
+                current_line = lines[i]
+                if current_line.strip() == "" or current_line.startswith(" ") or current_line.startswith("\t"):
                     i += 1
                     continue
                 break
@@ -46,8 +50,8 @@ def strip_copilot_frontmatter(content: str) -> str:
         if line.startswith("mcp-servers:"):
             i += 1
             while i < len(lines):
-                L = lines[i]
-                if L.strip() == "" or L.startswith(" ") or L.startswith("\t"):
+                current_line = lines[i]
+                if current_line.strip() == "" or current_line.startswith(" ") or current_line.startswith("\t"):
                     i += 1
                     continue
                 break
@@ -271,12 +275,11 @@ def main() -> None:
             (dest / "SKILL.md").write_text(out, encoding="utf-8")
 
     # Prune stale skill mirrors (but keep special non-steering directories)
-    special_skill_dirs = {"skill-research", "skill-template", "agentic-programming"}
     for folder in ("cursor", "claude", "github"):
         sd = root / f".{folder}" / "skills"
         if sd.is_dir():
             for stale_dir in sorted(sd.iterdir()):
-                if stale_dir.is_dir() and stale_dir.name not in expected_skill_names and stale_dir.name not in special_skill_dirs:
+                if stale_dir.is_dir() and stale_dir.name not in expected_skill_names and stale_dir.name not in SPECIAL_SKILL_DIRS:
                     skill_md = stale_dir / "SKILL.md"
                     if skill_md.is_file():
                         skill_md.unlink()
