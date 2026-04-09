@@ -6,13 +6,13 @@ github_url: https://github.com/saloonphp/saloon
 docs_url: https://docs.saloon.dev
 composer_require: composer require saloonphp/saloon
 author: Sam Carré
-announce_date: 
-latest_release: 
-release_date: 
-laravel_news_url: 
-downloads_30d: 
-stars: 
-tags: [laravel, packages, http, api, sdk, http-client, testing, integrations]
+announce_date: 2022-01-18
+latest_release: v4.0.0 (2026-03-25)
+release_date: 2026-03-25
+laravel_news_url: https://laravel-news.com/saloon
+downloads_30d: 700734
+stars: 2398
+tags: [laravel, packages, api, api-integrations, api-wrapper, framework-agnostic, guzzle-wrapper, php, saloon, sdk]
 ---
 
 # Saloon
