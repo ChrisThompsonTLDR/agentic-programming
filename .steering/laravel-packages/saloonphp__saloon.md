@@ -7,7 +7,7 @@ docs_url: https://docs.saloon.dev
 composer_require: composer require saloonphp/saloon
 author: Sam Carré
 announce_date: 2022-01-18
-latest_release: v4.0.0 (2026-03-25)
+latest_release: v4.0.0
 release_date: 2026-03-25
 laravel_news_url: https://laravel-news.com/saloon
 downloads_30d: 700734
@@ -88,6 +88,7 @@ Mock requests in tests:
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
 
+$connector = new ForgeConnector();
 $mockClient = new MockClient([
     GetServersRequest::class => MockResponse::make(['data' => []], 200),
 ]);
